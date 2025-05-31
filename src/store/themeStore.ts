@@ -10,7 +10,7 @@ interface ThemeState {
 
 export const useThemeStore = create<ThemeState>((set) => ({
   primaryColor: '#3B82F6',
-  secondaryColor: '#9333EA',
+  secondaryColor: '#007ec7',
   darkMode: window.matchMedia('(prefers-color-scheme: dark)').matches,
   setTheme: ({ primaryColor, secondaryColor }) => set((state) => ({
     ...state,

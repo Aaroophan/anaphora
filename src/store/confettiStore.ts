@@ -12,8 +12,8 @@ interface ConfettiState {
 export const useConfettiStore = create<ConfettiState>((set) => ({
   isActive: false,
   hasRun: false,
-  colors: ['#3B82F6', '#9333EA', '#10B981', '#F59E0B'],
-  activate: () => set((state) => ({ isActive: true, hasRun: true })),
+  colors: ['#3B82F6', '#9333EA', '#F97316', '#22C55E'],
+  activate: () => set({ isActive: true, hasRun: true }),
   deactivate: () => set({ isActive: false }),
   setColors: (colors) => set({ colors }),
 }));

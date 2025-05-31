@@ -1,58 +1,51 @@
-import  { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HelpCircle } from 'lucide-react';
+import { Layout, Home } from 'lucide-react';
 
 export const NotFound = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50 dark:bg-gray-900">
-      <div className="text-center max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-4">
+      <div className="max-w-xl w-full">
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, damping: 10 }}
-          className="mb-8 inline-block"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
         >
-          <HelpCircle size={80} className="mx-auto text-primary" />
-        </motion.div>
-        
-        <motion.h1
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-4xl font-bold mb-4 text-gray-900 dark:text-white"
-        >
-          404
-        </motion.h1>
-        
-        <motion.p
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200"
-        >
-          Page Not Found
-        </motion.p>
-        
-        <motion.p
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-gray-600 dark:text-gray-300 mb-8"
-        >
-          The page you're looking for doesn't exist or has been moved.
-        </motion.p>
-        
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <Link to="/" className="btn btn-primary">
-            Go Home
-          </Link>
+          <div className="flex justify-center mb-6">
+            <Layout className="w-16 h-16 text-primary" />
+          </div>
+
+          <motion.h1
+            className="text-7xl font-bold text-primary mb-4"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 2
+            }}
+          >
+            404
+          </motion.h1>
+
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
+            Page Not Found
+          </h2>
+
+          <p className="text-gray-600 dark:text-gray-300 mb-10">
+            Oops! The page you're looking for doesn't exist or has been moved.
+          </p>
+
+          <motion.a
+            href="/"
+            className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Home className="mr-2 h-4 w-4" />
+            Back to Home
+          </motion.a>
         </motion.div>
       </div>
     </div>
   );
 };
- 

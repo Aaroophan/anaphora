@@ -1,53 +1,108 @@
-import  { useRef, useEffect } from 'react';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
-import { OrbitControls, useTexture } from '@react-three/drei';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import { createAvatar } from '@dicebear/core';
-import { identicon } from '@dicebear/collection';
+import { useMemo } from 'react';
 import { useThemeStore } from '../../store/themeStore';
-import { useAccessibilityStore } from '../../store/accessibilityStore';
 
-interface AvatarSceneProps {
+interface AvatarGeneratorProps {
   username: string;
   size?: number;
+  className?: string;
 }
 
-const Avatar3D = ({ username }: { username: string }) => {
-  const meshRef = useRef<THREE.Mesh>(null);
+export const AvatarGenerator = ({ username, size = 100, className = '' }: AvatarGeneratorProps) => {
   const { primaryColor } = useThemeStore();
-  
-  const avatarSvg = createAvatar(identicon, {
-    seed: username,
-    backgroundColor: [primaryColor.substring(1)],
-  }).toDataUriSync();
-  
-  const texture = useTexture(avatarSvg);
-  
-  useFrame((_, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.2;
+
+  // Generate deterministic SVG based on username
+  const svgContent = useMemo(() => {
+    // Hash the username for deterministic results
+    let hash = 0;
+    for (let i = 0; i < username.length; i++) {
+      hash = ((hash << 5) - hash) + username.charCodeAt(i);
+      hash |= 0;
     }
-  });
+
+    // Create a deterministic array of colors based on hash
+    const getColor = (index: number) => {
+      const hue = (hash + index * 50) % 360;
+      return `hsl(${hue}, 70%, 60%)`;
+    };
+
+    // Create background grid
+    const cellSize = 20;
+    const numCells = 5;
+    const cells: JSX.Element[] = [];
+
+    for (let y = 0; y < numCells; y++) {
+      for (let x = 0; x < numCells; x++) {
+        // Make it symmetrical
+        const shouldFill = (x < Math.floor(numCells / 2) &&
+          Math.abs(hash + x * y) % 2 === 0);
+
+        if (shouldFill) {
+          cells.push(
+            <rect
+              key={`${x}-${y}`}
+              x={x * cellSize}
+              y={y * cellSize}
+              width={cellSize}
+              height={cellSize}
+              fill={getColor(x + y)}
+            />
+          );
+
+          // Add mirrored cell for symmetry
+          if (x !== numCells - 1 - x) {
+            cells.push(
+              <rect
+                key={`${numCells - 1 - x}-${y}`}
+                x={(numCells - 1 - x) * cellSize}
+                y={y * cellSize}
+                width={cellSize}
+                height={cellSize}
+                fill={getColor(x + y)}
+              />
+            );
+          }
+        }
+      }
+    }
+
+    // SVG container
+    return (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox={`0 0 ${numCells * cellSize} ${numCells * cellSize}`}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Background */}
+        <rect
+          width={numCells * cellSize}
+          height={numCells * cellSize}
+          fill={primaryColor || '#3B82F6'}
+          opacity="0.2"
+        />
+
+        {/* Cells */}
+        {cells}
+
+        {/* Border */}
+        <rect
+          width={numCells * cellSize}
+          height={numCells * cellSize}
+          fill="none"
+          stroke={primaryColor || '#3B82F6'}
+          strokeWidth="2"
+          opacity="0.5"
+        />
+      </svg>
+    );
+  }, [username, primaryColor]);
 
   return (
-    <mesh ref={meshRef}>
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial map={texture} />
-    </mesh>
-  );
-};
-
-export const AvatarScene = ({ username, size = 200 }: AvatarSceneProps) => {
-  const { reducedMotion } = useAccessibilityStore();
-  
-  return (
-    <div style={{ width: size, height: size }}>
-      <Canvas>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
-        <Avatar3D username={username} />
-        {!reducedMotion && <OrbitControls enableZoom={false} enablePan={false} />}
-      </Canvas>
+    <div
+      className={`rounded-full overflow-hidden shadow-md ${className}`}
+      style={{ width: size, height: size }}
+    >
+      {svgContent}
     </div>
   );
 };
