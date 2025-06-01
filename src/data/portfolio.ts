@@ -3,7 +3,7 @@ import  { Portfolio } from '../types/portfolio';
 export const portfolioData: Portfolio = {
   "Main": {
     "Image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0",
-    "Greeting": "Hi, I'm",
+    "Greeting": "I'm",
     "Name": "Aaroophan Varatharajan",
     "Tags": [
       "Animation Enthusiast",
@@ -16,32 +16,32 @@ export const portfolioData: Portfolio = {
     "Links": [
       {
         "Name": "Instagram",
-        "Icon": "instagram",
+        "Icon": "Instagram",
         "Href": "https://www.instagram.com/aaroophan/?theme=dark"
       },
       {
         "Name": "LinkedIn",
-        "Icon": "linkedin",
+        "Icon": "Linkedin",
         "Href": "https://www.linkedin.com/in/aaroophan/"
       },
       {
         "Name": "GitHub",
-        "Icon": "github",
+        "Icon": "Github",
         "Href": "https://github.com/Aaroophan"
       },
       {
         "Name": "Email",
-        "Icon": "envelope-fill",
-        "Href": "arophn@gmail.com"
+        "Icon": "Mail",
+        "Href": "mailto:arophn@gmail.com"
       },
       {
         "Name": "Phone",
-        "Icon": "telephone-fill",
-        "Href": "tel:+94768505131"
+        "Icon": "Phone",
+        "Href": "https://wa.me/+94768505131"
       },
       {
         "Name": "Resume",
-        "Icon": "file-person-fill",
+        "Icon": "FileText",
         "Href": "https://drive.google.com/file/d/12MG7Wg_VBgnbUzlsVtpnBxIRaLVlzMim/view?usp=sharing"
       }
     ],
@@ -52,8 +52,8 @@ export const portfolioData: Portfolio = {
     ],
     "Images": [
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0",
-      "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0"
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0",
+      "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0"
     ]
   },
   "About": {

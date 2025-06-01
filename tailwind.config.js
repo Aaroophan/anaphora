@@ -7,6 +7,8 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        caveat: ['Caveat', 'cursive'],
+        comic: ['"Comic Sans MS"', 'cursive'],
       },
       colors: {
         primary: 'var(--primary-color)',
