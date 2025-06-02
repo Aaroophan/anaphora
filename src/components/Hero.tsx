@@ -7,18 +7,101 @@ export const Hero = () => {
 	const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
 	const [currentBackgroundOpacity, setCurrentBackgroundOpacity] = useState(0.15);
 	const [currentTagIndex, setCurrentTagIndex] = useState(0);
-	const [isVisible, setIsVisible] = useState(false);
+	const [isVisible, setIsVisible] = useState<Boolean>(false);
 	//const { width, height } = useWindowSize();
 	const ref = useRef<HTMLDivElement>(null);
 	const isInView = useInView(ref, { once: false });
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % portfolioData.Main.Backgrounds.length);
-    }, 10000);
-    
-    return () => clearInterval(interval);
-  }, [portfolioData.Main.Backgrounds.length]);
+
+	const tailwindBorderClasses: string[] = [
+		// General
+		"rounded-xl",
+		"rounded-xl2", "rounded-xl3", "rounded-xl4", "rounded-full",
+
+		// Start (s)
+		"rounded-s-xl",
+		"rounded-s-xl2", "rounded-s-xl3", "rounded-s-xl4",
+
+		// End (e)
+		"rounded-e-xl",
+		"rounded-e-xl2", "rounded-e-xl3", "rounded-e-xl4",
+
+		// Top (t)
+		"rounded-t-xl",
+		"rounded-t-xl2", "rounded-t-xl3", "rounded-t-xl4",
+
+		// Right (r)
+		"rounded-r-xl",
+		"rounded-r-xl2", "rounded-r-xl3", "rounded-r-xl4",
+
+		// Bottom (b)
+		"rounded-b-xl",
+		"rounded-b-xl2", "rounded-b-xl3", "rounded-b-xl4",
+
+		// Left (l)
+		"rounded-l-xl",
+		"rounded-l-xl2", "rounded-l-xl3", "rounded-l-xl4",
+
+		// Start-Start (ss)
+		"rounded-ss-xl",
+		"rounded-ss-xl2", "rounded-ss-xl3", "rounded-ss-xl4",
+
+		// Start-End (se)
+		"rounded-se-xl",
+		"rounded-se-xl2", "rounded-se-xl3", "rounded-se-xl4",
+
+		// End-End (ee)
+		"rounded-ee-xl",
+		"rounded-ee-xl2", "rounded-ee-xl3", "rounded-ee-xl4",
+
+		// End-Start (es)
+		"rounded-es-xl",
+		"rounded-es-xl2", "rounded-es-xl3", "rounded-es-xl4",
+
+		// Top-Left (tl)
+		"rounded-tl-xl",
+		"rounded-tl-xl2", "rounded-tl-xl3", "rounded-tl-xl4",
+
+		// Top-Right (tr)
+		"rounded-tr-xl",
+		"rounded-tr-xl2", "rounded-tr-xl3", "rounded-tr-xl4",
+
+		// Bottom-Right (br)
+		"rounded-br-xl",
+		"rounded-br-xl2", "rounded-br-xl3", "rounded-br-xl4",
+
+		// Bottom-Left (bl)
+		"rounded-bl-xl",
+		"rounded-bl-xl2", "rounded-bl-xl3", "rounded-bl-xl4",
+	];
+
+	const [roundedClasses, setRoundedClasses] = useState<{
+													class1: string;
+													class2: string;
+													class3: string;
+												}>({
+													class1: tailwindBorderClasses[Math.floor(Math.random() * tailwindBorderClasses.length)],
+													class2: tailwindBorderClasses[Math.floor(Math.random() * tailwindBorderClasses.length)],
+													class3: tailwindBorderClasses[Math.floor(Math.random() * tailwindBorderClasses.length)],
+												});
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setRoundedClasses({
+				class1: tailwindBorderClasses[Math.floor(Math.random() * tailwindBorderClasses.length)],
+				class2: tailwindBorderClasses[Math.floor(Math.random() * tailwindBorderClasses.length)],
+				class3: tailwindBorderClasses[Math.floor(Math.random() * tailwindBorderClasses.length)],
+			});
+		}, 10000);
+
+		return () => clearInterval(interval);
+	}, []);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % portfolioData.Main.Backgrounds.length);
+		}, 20000);
+
+		return () => clearInterval(interval);
+	}, [portfolioData.Main.Backgrounds.length]);
 
 	useEffect(() => {
 		if (!portfolioData.Main.Tags) return;
@@ -186,14 +269,14 @@ export const Hero = () => {
       />
       
       {/* Content Container */}
-		  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
+	<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.5 }}
-            className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-xl border-4 border-primary/20 flex-shrink-0"
+			className={`w-64 h-64 sm:w-80 sm:h-80 rounded-xl ${roundedClasses.class1} ${roundedClasses.class2} ${roundedClasses.class3} overflow-hidden border-4 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-border border-transparent flex-shrink-0 transition-rounded duration-1000 ease-in-out shadow-xl4`}
           >
             <img
               src={portfolioData.Main.Images[currentBackgroundIndex]}

@@ -3,37 +3,38 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Calendar, MapPin, Building, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAccessibilityStore } from '../../store/accessibilityStore';
 import type { Experience } from '../../types/profile';
+import { portfolioData } from '../../data/portfolio';
 
 interface ExperienceSliderProps {
   experiences: Experience[];
 }
 
-export const ExperienceSlider = ({ experiences }: ExperienceSliderProps) => {
+export const ExperienceSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { reducedMotion } = useAccessibilityStore();
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
-  if (!experiences || experiences.length === 0) {
+  if (!portfolioData.Experiences || portfolioData.Experiences.length === 0) {
     return <div className="text-gray-500 text-center py-10">No experience to display</div>;
   }
 
   const nextExperience = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % experiences.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % portfolioData.Experiences.length);
   };
 
   const prevExperience = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + experiences.length) % experiences.length);
+    setActiveIndex((prevIndex) => (prevIndex - 1 + portfolioData.Experiences.length) % portfolioData.Experiences.length);
   };
 
-  const activeExperience = experiences[activeIndex];
+  const activeExperience = portfolioData.Experiences[activeIndex];
 
   return (
     <div ref={containerRef} className="relative">
       <div className="flex justify-between mb-8">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white">Work Experience</h3>
 
-        {experiences.length > 1 && (
+        {portfolioData.Experiences.length > 1 && (
           <div className="flex space-x-2">
             <button
               onClick={prevExperience}
@@ -54,9 +55,9 @@ export const ExperienceSlider = ({ experiences }: ExperienceSliderProps) => {
       </div>
 
       {/* Timeline indicators */}
-      {experiences.length > 1 && (
+      {portfolioData.Experiences.length > 1 && (
         <div className="flex justify-center space-x-2 mb-8">
-          {experiences.map((_, index) => (
+          {portfolioData.Experiences.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
@@ -95,11 +96,11 @@ export const ExperienceSlider = ({ experiences }: ExperienceSliderProps) => {
             className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md"
           >
             <div className="flex flex-col md:flex-row md:items-start gap-6">
-              {activeExperience.logo && (
+              {activeExperience.Image && (
                 <div className="w-16 h-16 md:w-24 md:h-24 flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg overflow-hidden p-1">
                   <img
-                    src={activeExperience.logo}
-                    alt={activeExperience.company}
+                    src={activeExperience.Image}
+                    alt={activeExperience.Company}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -107,37 +108,37 @@ export const ExperienceSlider = ({ experiences }: ExperienceSliderProps) => {
 
               <div className="flex-grow">
                 <h4 className="text-xl font-bold text-gray-900 dark:text-white">
-                  {activeExperience.position}
+                  {activeExperience.Title}
                 </h4>
 
                 <div className="text-primary font-medium mb-3">
-                  {activeExperience.company}
+                  {activeExperience.Company}
                 </div>
 
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-5">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    <span>{activeExperience.startDate} - {activeExperience.endDate || 'Present'}</span>
+                    <span>{activeExperience.Date}</span>
                   </div>
 
-                  {activeExperience.location && (
+                  {activeExperience.Location && (
                     <div className="flex items-center gap-1">
                       <MapPin className="w-4 h-4" />
-                      <span>{activeExperience.location}</span>
+                      <span>{activeExperience.Location}</span>
                     </div>
                   )}
 
-                  {activeExperience.remote !== undefined && (
+                  {activeExperience.JobType !== undefined && (
                     <div className="flex items-center gap-1">
                       <Building className="w-4 h-4" />
-                      <span>{activeExperience.remote ? 'Remote' : 'On-site'}</span>
+                      <span>{activeExperience.JobType}</span>
                     </div>
                   )}
                 </div>
 
-                {activeExperience.description.length > 0 && (
+                {activeExperience.Description.length > 0 && (
                   <ul className="space-y-2 mt-4">
-                    {activeExperience.description.map((item, index) => (
+                    {activeExperience.Description.map((item, index) => (
                       <motion.li
                         key={index}
                         initial={{ opacity: 0, x: -10 }}

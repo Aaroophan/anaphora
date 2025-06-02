@@ -1,36 +1,59 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import type { TechnologyCategory } from '../types/portfolio';
+import { portfolioData } from '../data/portfolio';
 
 interface TechnologiesProps {
   technologies: TechnologyCategory[];
 }
 
-export const Technologies = ({ technologies }: TechnologiesProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+export const Technologies = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false });
 
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={containerRef}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-10 text-center gradient-text">Skills & Technologies</h2>
+			<h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent">
+				{"Skills & Technologies".split('').map((letter, idx) => (
+					<motion.a
+						key={idx}
+						initial={{ opacity: 0 }}
+						animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+						transition={{ duration: 0.05, delay: idx * 0.05 }}
+						className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
+					>
+						{letter}
+					</motion.a>
+				))}
+            </h2>
         </motion.div>
         
         <div className="space-y-12">
-          {technologies.map(([category, skills], categoryIndex) => (
+          {portfolioData.Technologies.map(([category, skills], categoryIndex) => (
             <div key={category}>
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                className="text-xl font-bold mb-6 text-gray-800 dark:text-gray-200 border-l-4 border-primary pl-3"
+                className="text-xl font-bold mb-6 border-l-4 border-primary pl-3 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent"
               >
-                {category}
+                {category.split('').map((letter, idx) => (
+					<motion.a
+						key={idx}
+						initial={{ opacity: 0 }}
+						animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+						transition={{ duration: 0.05, delay: idx * 0.05 }}
+						className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
+					>
+						{letter}
+					</motion.a>
+				))}
               </motion.h3>
               
               <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">

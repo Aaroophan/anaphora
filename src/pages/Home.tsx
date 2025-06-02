@@ -20,20 +20,13 @@ export const Home = () => {
       transition={{ duration: 0.5 }}
     >
       <Header/>
-      <Hero
-        image={portfolioData.Main.Image}
-        greeting={portfolioData.Main.Greeting}
-        name={portfolioData.Main.Name}
-        tags={portfolioData.Main.Tags}
-        links={portfolioData.Main.Links}
-        backgrounds={portfolioData.Main.Backgrounds}
-      />
+      <Hero/>
 
-      <About description={portfolioData.About.Description} />
+      <About/>
 
-      <Technologies technologies={portfolioData.Technologies} />
+      <Technologies/>
 
-      <Projects projects={portfolioData.Projects} />
+      <Projects/>
 
       <Experience experiences={portfolioData.Experiences} />
 

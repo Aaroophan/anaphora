@@ -25,8 +25,20 @@ export default {
         }
       },
       blur: {
-        xs: '0px',
+        xs: '1px',
       },
+      borderRadius: {
+        xl: '32px',
+        xl2: '64px',
+        xl3: '128px',
+        xl4: '180px',
+      },
+      boxShadow: {
+        xl: '32px',
+        xl2: '64px',
+        xl3: '128px',
+        xl4: '256px',
+      }
     },
   },
   plugins: [],

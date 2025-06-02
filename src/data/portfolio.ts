@@ -329,6 +329,81 @@ export const portfolioData: Portfolio = {
       "Date": "Apr 2024 - Apr 2024",
       "Description": "This one day project manages locations that control multiple devices, with a REST service and user interfaces for storing and displaying information about these locations and their associated devices. All data is securely stored in a MongoDB database.",
       "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, Bootstrap, Mongoose, GitHub"
+    },
+    {
+      "Image": "/Images/ML.png",
+      "Name": "MovieList",
+      "Links": [
+        {
+          "Name": "Link",
+          "Icon": "link",
+          "Href": "https://3d2y-genin-com.stackstaging.com/"
+        }
+      ],
+      "Date": "Jun 2023 - Jun 2023",
+      "Description": "Developed a movie database website as a project to enhance my ReactJS skills. The website includes various functions such as the Home Page, Movie Page, Series Page, Search, Theme, Sign in, Sign up, Watchlist, Watch History, Dashboard, Profile, Edit Profile.",
+      "Technologies": "HTML, JavaScript, CSS, SQL, PHP, VS Code, ReactJS, MySQL, phpMyAdmin, Bootstrap, GitHub"
+    },
+    {
+      "Image": "/Images/EveryMoveProgress.png",
+      "Name": "EveryMove",
+      "Links": [
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/NeroBrutal/EveryMoveApp"
+        }
+      ],
+      "Date": "May 2023 - May 2023",
+      "Description": "Developed 'Progress' function of a fitness nutrition tracking android app for a gym's members as a group project for Higer Diploma in Information Technology. The Progress function combines progress tracking, chart visualization, data saving, and post management.",
+      "Technologies": "Java, XML, Studio, Firebase, GitHub"
+    },
+    {
+      "Image": "/Images/BB1.png",
+      "Name": "BaratieBakery",
+      "Links": [
+        {
+          "Name": "Link",
+          "Icon": "link",
+          "Href": "https://baratiebakery-asv.stackstaging.com/"
+        },
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/Aaroophan/BaratieBakery"
+        }
+      ],
+      "Date": "Nov 2022 - Dec 2022",
+      "Description": "Developed an e-commerce website for a model bakery as a project for Higher Diploma in Information Technology. The website includes various pages such as the Home Page, Product Page, Search, Sign in, Sign up, Cart, Checkout Bill, Order History, Dashboard, Profile, Edit Profile, Admin Product Page (with options to Edit, Delete, and set Availability, exclusive to administrators), and Admin Add Product.",
+      "Technologies": "HTML, CSS, JavaScript, jQuery, SQL, PHP, DreamWeaver, MySQL, phpMyAdmin, GitHub"
+    },
+    {
+      "Image": "/Images/2D.png",
+      "Name": "2D Animation Short",
+      "Links": [
+        {
+          "Name": "Demo",
+          "Icon": "play-circle",
+          "Href": "https://www.youtube.com/watch?v=Q0trwCC5dgE"
+        }
+      ],
+      "Date": "Nov 2022 - Nov 2022",
+      "Description": "This is a 2D animation short video I animated as a part for a group project for Interactive Design Concepts & Practices module for Higer Diploma in Information Technology.",
+      "Technologies": "Adobe Illustrator, After Effects"
+    },
+    {
+      "Image": "/Images/TT.jpeg",
+      "Name": "TimeTicker",
+      "Links": [
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/Aaroophan/PaperClips"
+        }
+      ],
+      "Date": "May 2022 - Jun 2022",
+      "Description": "Developed a Java Swing application for a watch sales and repair shop. Implemented features for managing watch sales invoices, watch repair jobs, spare parts, and part suppliers. Developed functionality for allocating employees to repair jobs and generating monthly income and expense reports. Integrated ability to send notifications to suppliers when parts are out of stock and to customers when repair job is completed via email.",
+      "Technologies": "Java, NetBeans IDE, MySQL, phpMyAdmin, GitHub"
     }
   ],
   "Experiences": [

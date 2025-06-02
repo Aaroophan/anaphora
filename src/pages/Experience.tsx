@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 import { ExperienceSlider } from '../components/experience/ExperienceSlider';
 import { EducationTimeline } from '../components/education/EducationTimeline';
 import { mockProfile } from '../mock/mockData';
+import { portfolioData } from '../data/portfolio';
 
 export const Experience = () => {
-  const { experiences, education } = mockProfile;
+  const { Experiences, Education } = portfolioData.Experiences;
 
   return (
     <motion.div
@@ -26,14 +27,14 @@ export const Experience = () => {
           <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">
             Work Experience
           </h2>
-          <ExperienceSlider experiences={experiences || []} />
+          <ExperienceSlider experiences={Experiences || []} />
         </div>
 
         <div>
           <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">
             Education
           </h2>
-          <EducationTimeline education={education || []} />
+          <EducationTimeline education={Education || []} />
         </div>
       </div>
     </motion.div>

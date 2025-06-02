@@ -2,12 +2,9 @@ import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
 import type { Project } from '../types/portfolio';
+import { portfolioData } from '../data/portfolio';
 
-interface ProjectsProps {
-  projects: Project[];
-}
-
-export const Projects = ({ projects }: ProjectsProps) => {
+export const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
 
@@ -36,7 +33,7 @@ export const Projects = ({ projects }: ProjectsProps) => {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {portfolioData.Projects.map((project, index) => (
             <motion.div
               key={project.Name}
               initial={{ opacity: 0, y: 50 }}
