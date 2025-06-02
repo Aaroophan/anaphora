@@ -5,10 +5,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        comic: ['"Comic Sans MS"', 'cursive'],
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         caveat: ['Caveat', 'cursive'],
-        comic: ['"Comic Sans MS"', 'cursive'],
       },
       colors: {
         primary: 'var(--primary-color)',
@@ -23,6 +23,9 @@ export default {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
         }
+      },
+      blur: {
+        xs: '0px',
       },
     },
   },

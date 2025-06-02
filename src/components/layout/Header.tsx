@@ -57,7 +57,7 @@ export const Header = () => {
 		const IconComponent = NavLink[1]
 
 		return(
-			<motion.a
+			<motion.button
 				key={index}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
@@ -84,8 +84,6 @@ export const Header = () => {
 				}}
 				className="flex items-center px-1 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
 				onClick={() => setIsMenuOpen(false)}
-				href={NavLink[0]}
-				
 			>
 				{/* <Link to={NavLink[0]} className={index + 1 === NavLinksDetails.length ?
 							`` :
@@ -103,7 +101,7 @@ export const Header = () => {
 					</motion.a>
 				))}
 				{/* </Link> */}
-			</motion.a>
+			</motion.button>
 	)})
 
 
@@ -138,7 +136,6 @@ export const Header = () => {
 						repeatType: "mirror"
 					}
 				}}
-					key={index}
 					href={HeaderSocial.Href}
 					target="_blank"
 					rel="noopener noreferrer"
@@ -155,7 +152,7 @@ export const Header = () => {
         scrolled ? 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-md shadow-xl py-1' : 'bg-transparent py-5'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-2 lg:px-3">
+      <div className="container mx-auto px-4 sm:px-2 lg:px-3 ">
         <div className="flex justify-between items-center">
 				<a className="flex items-center text-xl font-bold text-primary cursor-default">
 					  <LucideIcons.Linkedin className="me-5 inline-block no-underline text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" onClick={() => window.location.href = portfolioData.Main.Links[1].Href} />

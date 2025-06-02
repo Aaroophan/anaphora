@@ -86,7 +86,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Phone</h4>
                   <a href="tel:+94768505131" className="text-gray-900 dark:text-white hover:text-primary">
-                    +94 768 505 131
+                    +94 76 850 5131
                   </a>
                 </div>
               </div>
