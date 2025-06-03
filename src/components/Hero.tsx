@@ -149,7 +149,7 @@ export const Hero = () => {
 				href={Social.Href}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg hover:scale-105 transition-all text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+				className="p-3 rounded-full bg-white dark:bg-slate-700/40 backdrop-blur-sm shadow-lg  hover:scale-100 transition-all text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
 				aria-label={Social.Name}
 			>
 				<IconComponent className="w-5 h-5" />
@@ -258,10 +258,10 @@ export const Hero = () => {
 	};
 
   return (
-    <section className="relative min-h-screen flex items-center py-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center py-20 overflow-hidden ">
       {/* Background Image with Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out blur-xs"
+        className="fixed inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out blur-xs"
         style={{
           backgroundImage: `url(${portfolioData.Main.Backgrounds[currentBackgroundIndex]})`,
           opacity: currentBackgroundOpacity,
@@ -276,7 +276,7 @@ export const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.5 }}
-			className={`w-64 h-64 sm:w-80 sm:h-80 rounded-xl ${roundedClasses.class1} ${roundedClasses.class2} ${roundedClasses.class3} overflow-hidden border-4 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-border border-transparent flex-shrink-0 transition-rounded duration-1000 ease-in-out shadow-xl4`}
+			className={`w-64 h-64 sm:w-80 sm:h-80 rounded-xl ${roundedClasses.class1} ${roundedClasses.class2} ${roundedClasses.class3} overflow-hidden border-2 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-border border-transparent flex-shrink-0 transition-rounded duration-1000 ease-in-out shadow-lg`}
           >
             <img
               src={portfolioData.Main.Images[currentBackgroundIndex]}

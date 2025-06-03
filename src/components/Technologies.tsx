@@ -12,7 +12,7 @@ export const Technologies = () => {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-800">
+	  <section id="skills" className="py-20 bg-slate-500/20 dark:bg-gray-500/20 backdrop-blur-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,20 +56,19 @@ export const Technologies = () => {
 				))}
               </motion.h3>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 ">
                 {skills.map(([icon, name], skillIndex) => (
                   <motion.div
                     key={`${name}-${skillIndex}`}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                     transition={{ 
-                      duration: 0.3, 
-                      delay: categoryIndex * 0.1 + skillIndex * 0.05,
+                      duration: 0.1, 
+                      delay: categoryIndex * 0.01 + skillIndex * 0.01,
                       type: 'spring',
-                      stiffness: 100
                     }}
-                    whileHover={{ scale: 1.05 }}
-                    className="flex flex-col items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all"
+                    whileHover={{ scale: 1.25 }}
+                    className="flex flex-col items-center p-4 transition-all duration-300 rounded-lg border-l-2 border-primary shadow-lg hover:shadow-xl hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
                   >
                     <div className="w-12 h-12 mb-3 flex items-center justify-center">
                       <img 

@@ -82,7 +82,8 @@ export const Header = () => {
 						repeatType: "mirror"
 					}
 				}}
-				className="flex items-center px-1 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+				className="flex items-center px-1 py-2 rounded-md text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors hover:ring-1 hover:ring-slate-700 dark:hover:ring-slate-300"
+
 				onClick={() => setIsMenuOpen(false)}
 			>
 				{/* <Link to={NavLink[0]} className={index + 1 === NavLinksDetails.length ?
@@ -149,7 +150,7 @@ export const Header = () => {
   return (
     <header 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-md shadow-xl py-1' : 'bg-transparent py-5'
+        scrolled ? 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-md shadow-md py-1' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-2 lg:px-3 ">

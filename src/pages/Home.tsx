@@ -10,6 +10,8 @@ import { References } from '../components/References';
 import { Contact } from '../components/Contact';
 import { portfolioData } from '../data/portfolio';
 import { Header } from '../components/layout/Header';
+import { ExperienceSlider } from '../components/experience/ExperienceSlider';
+import { Footer } from '../components/layout/Footer';
 
 export const Home = () => {
   return (
@@ -28,7 +30,7 @@ export const Home = () => {
 
       <Projects/>
 
-      <Experience experiences={portfolioData.Experiences} />
+      <Experience />
 
       <Education educations={portfolioData.Educations} />
 
@@ -37,6 +39,8 @@ export const Home = () => {
       <References references={portfolioData.References} />
 
       <Contact />
+
+      <Footer/>
     </motion.div>
   );
 };

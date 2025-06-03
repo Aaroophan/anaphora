@@ -5,10 +5,6 @@ import { useAccessibilityStore } from '../../store/accessibilityStore';
 import type { Experience } from '../../types/profile';
 import { portfolioData } from '../../data/portfolio';
 
-interface ExperienceSliderProps {
-  experiences: Experience[];
-}
-
 export const ExperienceSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { reducedMotion } = useAccessibilityStore();
@@ -32,7 +28,19 @@ export const ExperienceSlider = () => {
   return (
     <div ref={containerRef} className="relative">
       <div className="flex justify-between mb-8">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white">Work Experience</h3>
+        <h3 className="text-xl font-bold bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
+          {"Work Experience".split('').map((letter, idx) => (
+            <motion.a
+              key={idx}
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.05, delay: idx * 0.05 }}
+              className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
+            >
+              {letter}
+            </motion.a>
+          ))}
+        </h3>
 
         {portfolioData.Experiences.length > 1 && (
           <div className="flex space-x-2">
@@ -147,7 +155,7 @@ export const ExperienceSlider = () => {
                         className="flex items-start gap-2"
                       >
                         <span className="text-primary mt-1.5">•</span>
-                        <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                        <span className="text-gray-700 dark:text-gray-300 text-xl">{item}</span>
                       </motion.li>
                     ))}
                   </ul>

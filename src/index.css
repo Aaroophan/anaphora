@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 @tailwind base;
@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply bg-gray-50 text-gray-900 font-sans scroll-smooth;
+  @apply bg-slate-50 text-slate-900 font-comic scroll-smooth;
   overscroll-behavior: none;
 }
 
@@ -20,7 +20,7 @@ html {
 }
 
 .dark {
-  @apply bg-gray-900 text-gray-100;
+  @apply bg-slate-900 text-slate-100;
 }
 
 @layer components {
@@ -34,15 +34,15 @@ html {
 
 
   .input {
-    @apply w-full px-4 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-primary dark:text-white;
+    @apply w-full px-4 py-2 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-md focus:outline-none focus:ring-2 focus:ring-primary dark:text-white;
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden;
+    @apply bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden;
   }
 
   .heading {
-    @apply font-bold text-gray-900 dark:text-white;
+    @apply font-bold text-slate-900 dark:text-white;
   }
 }
 

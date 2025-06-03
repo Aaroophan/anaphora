@@ -6,7 +6,6 @@ export default {
     extend: {
       fontFamily: {
         comic: ['"Comic Sans MS"', 'cursive'],
-        sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         caveat: ['Caveat', 'cursive'],
       },
@@ -34,11 +33,11 @@ export default {
         xl4: '180px',
       },
       boxShadow: {
-        xl: '32px',
-        xl2: '64px',
-        xl3: '128px',
-        xl4: '256px',
-      }
+        xl: '1px 1px 32px rgba(25, 25, 50, 0.9)',
+        xl2: '1px 1px 64px rgba(25, 25, 50, 0.9)',
+        xl3: '1px 1px 128px rgba(25, 25, 50, 0.9)',
+        xl4: '1px 1px 256px rgba(25, 25, 50, 0.9)',
+      },
     },
   },
   plugins: [],

@@ -2,14 +2,11 @@ import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, Award } from 'lucide-react';
 import type { Education as EducationType } from '../types/portfolio';
+import { portfolioData } from '../data/portfolio';
 
-interface EducationProps {
-  educations: EducationType[];
-}
-
-export const Education = ({ educations }: EducationProps) => {
+export const Education = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+  const isInView = useInView(containerRef, { once: false, amount: 0.1 });
 
   return (
     <section id="education" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -19,17 +16,28 @@ export const Education = ({ educations }: EducationProps) => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-10 text-center gradient-text">Education</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
+            {"Education".split('').map((letter, idx) => (
+              <motion.a
+                key={idx}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.05, delay: idx * 0.05 }}
+                className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
+              >
+                {letter}
+              </motion.a>
+            ))}</h2>
         </motion.div>
         
         <div className="space-y-12 max-w-4xl mx-auto">
-          {educations.map((education, index) => (
+          {portfolioData.Educations.map((education, index) => (
             <motion.div
               key={`${education.Name}-${index}`}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md flex flex-col md:flex-row gap-6"
+              className="transition-all duration-300 rounded-xl border-l-4 border-primary shadow-lg hover:shadow-xl hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm p-6 flex flex-col md:flex-row gap-6"
             >
               <div className="md:w-1/4 flex-shrink-0">
                 <div className="w-24 h-24 rounded-lg overflow-hidden mb-4 mx-auto md:mx-0">
