@@ -62,28 +62,28 @@ export const portfolioData: Portfolio = {
       }
     ],
     "Backgrounds": [
-      "/public/images/BG_1.jpg",
-      "/public/images/BG_2.jpg",
-      "/public/images/BG_3.jpg",
-      "/public/images/BG_4.jpg",
-      "/public/images/BG_5.jpg",
-      "/public/images/BG_6.jpg",
-      "/public/images/BG_7.jpg",
-      "/public/images/BG_8.jpg",
-      "/public/images/BG_9.jpg",
-      "/public/images/BG_10.jpg"
+      "/anaphora/images/BG_1.jpg",
+      "/anaphora/images/BG_2.jpg",
+      "/anaphora/images/BG_3.jpg",
+      "/anaphora/images/BG_4.jpg",
+      "/anaphora/images/BG_5.jpg",
+      "/anaphora/images/BG_6.jpg",
+      "/anaphora/images/BG_7.jpg",
+      "/anaphora/images/BG_8.jpg",
+      "/anaphora/images/BG_9.jpg",
+      "/anaphora/images/BG_10.jpg"
     ],
     "Images": [
-      "/public/images/Profile_1.jpg",
-      "/public/images/Profile_2.jpg",
-      "/public/images/Profile_3.jpg",
-      "/public/images/Profile_4.jpg",
-      "/public/images/Profile_5.jpg",
-      "/public/images/Profile_6.jpg",
-      "/public/images/Profile_3.jpg",
-      "/public/images/Profile_4.jpg",
-      "/public/images/Profile_5.jpg",
-      "/public/images/Profile_6.jpg"
+      "/anaphora/images/Profile_1.jpg",
+      "/anaphora/images/Profile_2.jpg",
+      "/anaphora/images/Profile_3.jpg",
+      "/anaphora/images/Profile_4.jpg",
+      "/anaphora/images/Profile_5.jpg",
+      "/anaphora/images/Profile_6.jpg",
+      "/anaphora/images/Profile_3.jpg",
+      "/anaphora/images/Profile_4.jpg",
+      "/anaphora/images/Profile_5.jpg",
+      "/anaphora/images/Profile_6.jpg"
     ]
   },
   "About": {
@@ -271,7 +271,7 @@ export const portfolioData: Portfolio = {
   ],
   "Projects": [
     {
-      "Image": "/public/images/AFCLOD.png",
+      "Image": "/anaphora/images/AFCLOD.png",
       "Name": "AFC's LOD Web Application",
       "Links": [],
       "Date": "Jul 2024 - Jul 2024",
@@ -279,7 +279,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, PostgreSQL, Bootstrap, Mongoose"
     },
     {
-      "Image": "/public/images/MT.jpeg",
+      "Image": "/anaphora/images/MT.jpeg",
       "Name": "Mend-Tale-Game",
       "Links": [
         {
@@ -303,7 +303,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, Python, MongoDB, ExpressJS, ReactJS, NodeJS, Flask, PyTorch, OpenAI, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/public/images/Dom.jpeg",
+      "Image": "/anaphora/images/Dom.jpeg",
       "Name": "CIS-Domeytoe-Game",
       "Links": [
         {
@@ -327,7 +327,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/public/images/LocDev.jpeg",
+      "Image": "/anaphora/images/LocDev.jpeg",
       "Name": "LocDev",
       "Links": [
         {
@@ -346,7 +346,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/public/images/ML.png",
+      "Image": "/anaphora/images/ML.png",
       "Name": "MovieList",
       "Links": [
         {
@@ -360,7 +360,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "HTML, JavaScript, CSS, SQL, PHP, VS Code, ReactJS, MySQL, phpMyAdmin, Bootstrap, GitHub"
     },
     {
-      "Image": "/public/images/EveryMoveProgress.png",
+      "Image": "/anaphora/images/EveryMoveProgress.png",
       "Name": "EveryMove",
       "Links": [
         {
@@ -374,7 +374,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Java, XML, Studio, Firebase, GitHub"
     },
     {
-      "Image": "/public/images/BB1.png",
+      "Image": "/anaphora/images/BB1.png",
       "Name": "BaratieBakery",
       "Links": [
         {
@@ -393,7 +393,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "HTML, CSS, JavaScript, jQuery, SQL, PHP, DreamWeaver, MySQL, phpMyAdmin, GitHub"
     },
     {
-      "Image": "/public/images/2D.png",
+      "Image": "/anaphora/images/2D.png",
       "Name": "2D Animation Short",
       "Links": [
         {
@@ -407,7 +407,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Adobe Illustrator, After Effects"
     },
     {
-      "Image": "/public/images/TT.jpeg",
+      "Image": "/anaphora/images/TT.jpeg",
       "Name": "TimeTicker",
       "Links": [
         {
@@ -423,7 +423,7 @@ export const portfolioData: Portfolio = {
   ],
   "Experiences": [
     {
-      "Image": "/public/images/MDZ_logo.jpg",
+      "Image": "/anaphora/images/MDZ_logo.jpg",
       "Title": "Associate Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -444,7 +444,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/public/images/MDZ_logo.jpg",
+      "Image": "/anaphora/images/MDZ_logo.jpg",
       "Title": "Junior Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -465,7 +465,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/public/images/afcplc_logo.jpeg",
+      "Image": "/anaphora/images/afcplc_logo.jpeg",
       "Title": "Intern Software Engineer",
       "Company": "Alliance Finance Company PLC",
       "JobType": "Internship",
@@ -485,7 +485,7 @@ export const portfolioData: Portfolio = {
   ],
   "Educations": [
     {
-      "Image": "/public/images/UoB.png",
+      "Image": "/anaphora/images/UoB.png",
       "Name": "University of Bedfordshire",
       "Title": "B.Sc. Computer Science & Software Engineering",
       "Date": "Sep 2023 - May 2024",
@@ -494,7 +494,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/public/images/SCU.jpg",
+      "Image": "/anaphora/images/SCU.jpg",
       "Name": "SLIIT City UNI",
       "Title": "Higher Diploma in Information Technology",
       "Date": "May 2021 - Jun 2023",
@@ -503,7 +503,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/public/images/SMC.png",
+      "Image": "/anaphora/images/SMC.png",
       "Name": "St. Michael's College",
       "Title": "High School",
       "Date": "Jan 2006 - Aug 2019",
@@ -512,7 +512,7 @@ export const portfolioData: Portfolio = {
   ],
   "Certificates": [
     {
-      "Image": "/public/images/LI.png",
+      "Image": "/anaphora/images/LI.png",
       "Name": "React.js Essential Training",
       "Provider": "LinkedIn",
       "Date": "April 2024",
@@ -522,7 +522,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/public/images/Udemy.png",
+      "Image": "/anaphora/images/Udemy.png",
       "Name": "The Complete Web Developer Course 3.0",
       "Provider": "Udemy",
       "Date": "June 2024",
@@ -532,7 +532,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/public/images/BritishCouncil.png",
+      "Image": "/anaphora/images/BritishCouncil.png",
       "Name": "IELTS Academic - 7.0",
       "Provider": "British Council",
       "Date": "Mar 2023",
