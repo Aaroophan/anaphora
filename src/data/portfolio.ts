@@ -5,16 +5,16 @@ import Profile_3 from "../../Images/Profile_3.JPG"
 import Profile_4 from "../../Images/Profile_4.JPG"
 import Profile_5 from "../../Images/Profile_5.JPG"
 import Profile_6 from "../../Images/Profile_6.JPG"
-import Profile_1 from "../../Images/BG_1.JPG"
-import Profile_2 from "../../Images/BG_2.JPG"
-import Profile_3 from "../../Images/BG_3.JPG"
-import Profile_4 from "../../Images/BG_4.JPG"
-import Profile_5 from "../../Images/BG_5.JPG"
-import Profile_6 from "../../Images/BG_6.JPG"
-import Profile_7 from "../../Images/BG_7.JPG"
-import Profile_8 from "../../Images/BG_8.JPG"
-import Profile_9 from "../../Images/BG_9.JPG"
-import Profile_10 from "../../Images/BG_10.JPG"
+import BG_1 from "../../Images/BG_1.JPG"
+import BG_2 from "../../Images/BG_2.JPG"
+import BG_3 from "../../Images/BG_3.JPG"
+import BG_4 from "../../Images/BG_4.JPG"
+import BG_5 from "../../Images/BG_5.JPG"
+import BG_6 from "../../Images/BG_6.JPG"
+import BG_7 from "../../Images/BG_7.JPG"
+import BG_8 from "../../Images/BG_8.JPG"
+import BG_9 from "../../Images/BG_9.JPG"
+import PBG_10 from "../../Images/BG_10.JPG"
 
 export const portfolioData: Portfolio = {
   "Main": {
@@ -62,28 +62,28 @@ export const portfolioData: Portfolio = {
       }
     ],
     "Backgrounds": [
-      "/images/BG_1.jpg",
-      "/images/BG_2.jpg",
-      "/images/BG_3.jpg",
-      "/Images/BG_4.jpg",
-      "/Images/BG_5.jpg",
-      "/Images/BG_6.jpg",
-      "/Images/BG_7.jpg",
-      "/Images/BG_8.jpg",
-      "/Images/BG_9.jpg",
-      "/Images/BG_10.jpg"
+      "/public/images/BG_1.jpg",
+      "/public/images/BG_2.jpg",
+      "/public/images/BG_3.jpg",
+      "/public/images/BG_4.jpg",
+      "/public/images/BG_5.jpg",
+      "/public/images/BG_6.jpg",
+      "/public/images/BG_7.jpg",
+      "/public/images/BG_8.jpg",
+      "/public/images/BG_9.jpg",
+      "/public/images/BG_10.jpg"
     ],
     "Images": [
-      "/Images/Profile_1.jpg",
-      "/Images/Profile_2.jpg",
-      "/Images/Profile_3.jpg",
-      "/Images/Profile_4.jpg",
-      "/Images/Profile_5.jpg",
-      "/Images/Profile_6.jpg",
-      "/Images/Profile_3.jpg",
-      "/Images/Profile_4.jpg",
-      "/Images/Profile_5.jpg",
-      "/Images/Profile_6.jpg"
+      "/public/images/Profile_1.jpg",
+      "/public/images/Profile_2.jpg",
+      "/public/images/Profile_3.jpg",
+      "/public/images/Profile_4.jpg",
+      "/public/images/Profile_5.jpg",
+      "/public/images/Profile_6.jpg",
+      "/public/images/Profile_3.jpg",
+      "/public/images/Profile_4.jpg",
+      "/public/images/Profile_5.jpg",
+      "/public/images/Profile_6.jpg"
     ]
   },
   "About": {
@@ -271,7 +271,7 @@ export const portfolioData: Portfolio = {
   ],
   "Projects": [
     {
-      "Image": "/Images/AFCLOD.png",
+      "Image": "/public/images/AFCLOD.png",
       "Name": "AFC's LOD Web Application",
       "Links": [],
       "Date": "Jul 2024 - Jul 2024",
@@ -279,7 +279,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, PostgreSQL, Bootstrap, Mongoose"
     },
     {
-      "Image": "/Images/MT.jpeg",
+      "Image": "/public/images/MT.jpeg",
       "Name": "Mend-Tale-Game",
       "Links": [
         {
@@ -303,7 +303,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, Python, MongoDB, ExpressJS, ReactJS, NodeJS, Flask, PyTorch, OpenAI, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/Images/Dom.jpeg",
+      "Image": "/public/images/Dom.jpeg",
       "Name": "CIS-Domeytoe-Game",
       "Links": [
         {
@@ -327,7 +327,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/Images/LocDev.jpeg",
+      "Image": "/public/images/LocDev.jpeg",
       "Name": "LocDev",
       "Links": [
         {
@@ -346,7 +346,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/Images/ML.png",
+      "Image": "/public/images/ML.png",
       "Name": "MovieList",
       "Links": [
         {
@@ -360,7 +360,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "HTML, JavaScript, CSS, SQL, PHP, VS Code, ReactJS, MySQL, phpMyAdmin, Bootstrap, GitHub"
     },
     {
-      "Image": "/Images/EveryMoveProgress.png",
+      "Image": "/public/images/EveryMoveProgress.png",
       "Name": "EveryMove",
       "Links": [
         {
@@ -374,7 +374,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Java, XML, Studio, Firebase, GitHub"
     },
     {
-      "Image": "/Images/BB1.png",
+      "Image": "/public/images/BB1.png",
       "Name": "BaratieBakery",
       "Links": [
         {
@@ -393,7 +393,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "HTML, CSS, JavaScript, jQuery, SQL, PHP, DreamWeaver, MySQL, phpMyAdmin, GitHub"
     },
     {
-      "Image": "/Images/2D.png",
+      "Image": "/public/images/2D.png",
       "Name": "2D Animation Short",
       "Links": [
         {
@@ -407,7 +407,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Adobe Illustrator, After Effects"
     },
     {
-      "Image": "/Images/TT.jpeg",
+      "Image": "/public/images/TT.jpeg",
       "Name": "TimeTicker",
       "Links": [
         {
@@ -423,7 +423,7 @@ export const portfolioData: Portfolio = {
   ],
   "Experiences": [
     {
-      "Image": "/Images/MDZ_logo.jpg",
+      "Image": "/public/images/MDZ_logo.jpg",
       "Title": "Associate Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -444,7 +444,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/Images/MDZ_logo.jpg",
+      "Image": "/public/images/MDZ_logo.jpg",
       "Title": "Junior Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -465,7 +465,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/Images/afcplc_logo.jpeg",
+      "Image": "/public/images/afcplc_logo.jpeg",
       "Title": "Intern Software Engineer",
       "Company": "Alliance Finance Company PLC",
       "JobType": "Internship",
@@ -485,7 +485,7 @@ export const portfolioData: Portfolio = {
   ],
   "Educations": [
     {
-      "Image": "/Images/UoB.png",
+      "Image": "/public/images/UoB.png",
       "Name": "University of Bedfordshire",
       "Title": "B.Sc. Computer Science & Software Engineering",
       "Date": "Sep 2023 - May 2024",
@@ -494,7 +494,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/Images/SCU.jpg",
+      "Image": "/public/images/SCU.jpg",
       "Name": "SLIIT City UNI",
       "Title": "Higher Diploma in Information Technology",
       "Date": "May 2021 - Jun 2023",
@@ -503,7 +503,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/Images/SMC.png",
+      "Image": "/public/images/SMC.png",
       "Name": "St. Michael's College",
       "Title": "High School",
       "Date": "Jan 2006 - Aug 2019",
@@ -512,7 +512,7 @@ export const portfolioData: Portfolio = {
   ],
   "Certificates": [
     {
-      "Image": "/Images/LI.png",
+      "Image": "/public/images/LI.png",
       "Name": "React.js Essential Training",
       "Provider": "LinkedIn",
       "Date": "April 2024",
@@ -522,7 +522,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/Images/Udemy.png",
+      "Image": "/public/images/Udemy.png",
       "Name": "The Complete Web Developer Course 3.0",
       "Provider": "Udemy",
       "Date": "June 2024",
@@ -532,7 +532,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/Images/BritishCouncil.png",
+      "Image": "/public/images/BritishCouncil.png",
       "Name": "IELTS Academic - 7.0",
       "Provider": "British Council",
       "Date": "Mar 2023",
