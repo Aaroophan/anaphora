@@ -1,20 +1,4 @@
 import { Portfolio } from '../types/portfolio';
-import Profile_1 from "../../Images/Profile_1.JPG"
-import Profile_2 from "../../Images/Profile_2.JPG"
-import Profile_3 from "../../Images/Profile_3.JPG"
-import Profile_4 from "../../Images/Profile_4.JPG"
-import Profile_5 from "../../Images/Profile_5.JPG"
-import Profile_6 from "../../Images/Profile_6.JPG"
-import BG_1 from "../../Images/BG_1.JPG"
-import BG_2 from "../../Images/BG_2.JPG"
-import BG_3 from "../../Images/BG_3.JPG"
-import BG_4 from "../../Images/BG_4.JPG"
-import BG_5 from "../../Images/BG_5.JPG"
-import BG_6 from "../../Images/BG_6.JPG"
-import BG_7 from "../../Images/BG_7.JPG"
-import BG_8 from "../../Images/BG_8.JPG"
-import BG_9 from "../../Images/BG_9.JPG"
-import PBG_10 from "../../Images/BG_10.JPG"
 
 export const portfolioData: Portfolio = {
   "Main": {
@@ -62,28 +46,28 @@ export const portfolioData: Portfolio = {
       }
     ],
     "Backgrounds": [
-      "/anaphora/images/BG_1.jpg",
-      "/anaphora/images/BG_2.jpg",
-      "/anaphora/images/BG_3.jpg",
-      "/anaphora/images/BG_4.jpg",
-      "/anaphora/images/BG_5.jpg",
-      "/anaphora/images/BG_6.jpg",
-      "/anaphora/images/BG_7.jpg",
-      "/anaphora/images/BG_8.jpg",
-      "/anaphora/images/BG_9.jpg",
-      "/anaphora/images/BG_10.jpg"
+      "/anaphora/images/BG_1.JPG",
+      "/anaphora/images/BG_2.JPG",
+      "/anaphora/images/BG_3.JPG",
+      "/anaphora/images/BG_4.JPG",
+      "/anaphora/images/BG_5.JPG",
+      "/anaphora/images/BG_6.JPG",
+      "/anaphora/images/BG_7.JPG",
+      "/anaphora/images/BG_8.JPG",
+      "/anaphora/images/BG_9.JPG",
+      "/anaphora/images/BG_10.JPG"
     ],
     "Images": [
-      "/anaphora/images/Profile_1.jpg",
-      "/anaphora/images/Profile_2.jpg",
-      "/anaphora/images/Profile_3.jpg",
-      "/anaphora/images/Profile_4.jpg",
-      "/anaphora/images/Profile_5.jpg",
-      "/anaphora/images/Profile_6.jpg",
-      "/anaphora/images/Profile_3.jpg",
-      "/anaphora/images/Profile_4.jpg",
-      "/anaphora/images/Profile_5.jpg",
-      "/anaphora/images/Profile_6.jpg"
+      "/anaphora/images/Profile_1.JPG",
+      "/anaphora/images/Profile_2.JPG",
+      "/anaphora/images/Profile_3.JPG",
+      "/anaphora/images/Profile_4.JPG",
+      "/anaphora/images/Profile_5.JPG",
+      "/anaphora/images/Profile_6.JPG",
+      "/anaphora/images/Profile_3.JPG",
+      "/anaphora/images/Profile_4.JPG",
+      "/anaphora/images/Profile_5.JPG",
+      "/anaphora/images/Profile_6.JPG"
     ]
   },
   "About": {
