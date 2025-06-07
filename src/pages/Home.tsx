@@ -8,39 +8,40 @@ import { Education } from '../components/Education';
 import { Certificates } from '../components/Certificates';
 import { References } from '../components/References';
 import { Contact } from '../components/Contact';
-import { portfolioData } from '../data/portfolio';
 import { Header } from '../components/layout/Header';
-import { ExperienceSlider } from '../components/experience/ExperienceSlider';
 import { Footer } from '../components/layout/Footer';
 
 export const Home = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Header/>
-      <Hero/>
+	return (
+		<motion.div
+		initial={{ opacity: 0 }}
+		animate={{ opacity: 1 }}
+		exit={{ opacity: 0 }}
+		transition={{ duration: 0.5 }}
+		>
+			
+			<Header/>
 
-      <About/>
+			<Hero/>
 
-      <Technologies/>
+			<About/>
 
-      <Projects/>
+			<Technologies/>
 
-      <Experience />
+			<Projects/>
 
-      <Education educations={portfolioData.Educations} />
+			<Experience />
 
-      <Certificates certificates={portfolioData.Certificates} />
+			<Education />
 
-      <References references={portfolioData.References} />
+			<Certificates />
 
-      <Contact />
+			<References />
 
-      <Footer/>
-    </motion.div>
-  );
+			<Contact />
+
+			<Footer/>
+		
+		</motion.div>
+	);
 };

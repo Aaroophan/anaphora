@@ -1,14 +1,11 @@
 {
    "name": "anaphora",
    "private": true,
-   "version": "0.1.0",
+   "version": "0.2.0",
    "type": "module",
    "scripts": {
       "dev": "vite",
-      "build": "tsc && vite build --outDir docs",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d docs",
-      "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "build": "vite build",
       "preview": "vite preview"
    },
    "dependencies": {
