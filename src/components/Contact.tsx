@@ -1,6 +1,7 @@
 import  { useState, FormEvent, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Send, Check, AlertCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { portfolioData } from '../data/portfolio';
 
 export const Contact = () => {
 
@@ -45,7 +46,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-500/20 dark:bg-gray-500/20 backdrop-blur-sm">
+    <section id="contact" className="py-20 bg-slate-500/20 dark:bg-gray-500/20 backdrop-blur-sm rounded-t-xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,8 +90,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Email</h4>
-                  <a href="mailto:arophn@gmail.com" className="text-gray-900 dark:text-white hover:text-primary">
-                    arophn@gmail.com
+                  <a href={`${portfolioData.Contact.Email}`} className="text-gray-900 dark:text-white hover:text-primary">
+                    {portfolioData.Contact.Email.split(":")[1]}
                   </a>
                 </div>
               </div>
@@ -101,8 +102,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Phone</h4>
-                  <a href="tel:+94768505131" className="text-gray-900 dark:text-white hover:text-primary">
-                    +94 76 850 5131
+                  <a href={portfolioData.Contact.Phone} className="text-gray-900 dark:text-white hover:text-primary">
+                    {portfolioData.Contact.Phone.split("me/")[1]}
                   </a>
                 </div>
               </div>
@@ -114,7 +115,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Location</h4>
                   <p className="text-gray-900 dark:text-white">
-                    Colombo, Sri Lanka
+                    {portfolioData.Contact.Location}
                   </p>
                 </div>
               </div>
@@ -125,7 +126,7 @@ export const Contact = () => {
                 Let's Connect
               </h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, drop a message and I'll get back to you!
+                {portfolioData.Contact.Message}
               </p>
             </div>
           </motion.div>

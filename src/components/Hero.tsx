@@ -11,6 +11,23 @@ export const Hero = () => {
 	//const { width, height } = useWindowSize();
 	const ref = useRef<HTMLDivElement>(null);
 	const isInView = useInView(ref, { once: false });
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 250) {
+				setScrolled(true);
+			} else {
+				setScrolled(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	const tailwindBorderClasses: string[] = [
 		// General
@@ -215,7 +232,7 @@ export const Hero = () => {
 						className: 'bg-gradient-to-br from-blue-700 to-purple-700 dark:from-blue-500 dark:to-purple-500 bg-clip-text text-transparent',
 					});
 				}
-				setCurrentBackgroundOpacity(Math.random() * 0.2 + 0.1);
+				setCurrentBackgroundOpacity(Math.random() * 0.1 + 0.1);
 			}, 2000);
 
 			return () => clearInterval(interval);
@@ -261,22 +278,25 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center py-20 overflow-hidden ">
       {/* Background Image with Overlay */}
       <div
-        className="fixed inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out blur-xs"
+        className={`transition-opacity duration-1000 ease-in-out ${
+        scrolled ? 	'fixed inset-0 bg-cover bg-center blur-xs' : 
+					'fixed inset-0 bg-cover bg-center'}`}
         style={{
           backgroundImage: `url(${portfolioData.Main.Backgrounds[currentBackgroundIndex]})`,
-          opacity: currentBackgroundOpacity,
+			opacity: scrolled ? currentBackgroundOpacity : 0.5,
         }}
       />
       
       {/* Content Container */}
 	<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-28">
           {/* Profile Image */}
+		  <div className="hidden lg:block w-64 h-64 sm:w-80 sm:h-80 "></div>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.5 }}
-			className={`w-64 h-64 sm:w-80 sm:h-80 rounded-xl ${roundedClasses.class1} ${roundedClasses.class2} ${roundedClasses.class3} overflow-hidden border-2 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-border border-transparent flex-shrink-0 transition-rounded duration-1000 ease-in-out shadow-lg`}
+			className={`block lg:hidden w-64 h-64 sm:w-80 sm:h-80 rounded-xl ${roundedClasses.class1} ${roundedClasses.class2} ${roundedClasses.class3} overflow-hidden border-2 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-border border-transparent flex-shrink-0 transition-rounded duration-1000 ease-in-out shadow-lg`}
           >
             <img
               src={portfolioData.Main.Images[currentBackgroundIndex]}

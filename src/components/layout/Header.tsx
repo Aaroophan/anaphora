@@ -153,7 +153,7 @@ export const Header = () => {
         scrolled ? 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-md shadow-md py-1' : 'bg-transparent py-5'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-2 lg:px-3 ">
+		<div className={isMenuOpen ? "container mx-auto px-4 sm:px-2 lg:px-3 bg-white/50 dark:bg-gray-900/50  backdrop-blur-md": "container mx-auto px-4 sm:px-2 lg:px-3 "}>
         <div className="flex justify-between items-center">
 				<a className="flex items-center text-xl font-bold text-primary cursor-default">
 					  <LucideIcons.Linkedin className="me-5 inline-block no-underline text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" onClick={() => window.location.href = portfolioData.Main.Links[1].Href} />

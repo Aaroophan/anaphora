@@ -83,7 +83,13 @@ export const PortfolioSchema = z.object({
   Experiences: z.array(ExperienceSchema),
   Educations: z.array(EducationSchema),
   Certificates: z.array(CertificateSchema),
-  References: z.array(ReferenceSchema)
+  References: z.array(ReferenceSchema),
+  Contact: z.object({
+    Email: z.string(),
+    Phone: z.string(),
+    Location: z.string(),
+    Message: z.string(),
+  }),
 });
 
 export type Portfolio = z.infer<typeof PortfolioSchema>;

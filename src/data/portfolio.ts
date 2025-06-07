@@ -46,32 +46,32 @@ export const portfolioData: Portfolio = {
       }
     ],
     "Backgrounds": [
-      "/anaphora/images/BG_1.JPG",
-      "/anaphora/images/BG_2.JPG",
-      "/anaphora/images/BG_3.JPG",
-      "/anaphora/images/BG_4.JPG",
-      "/anaphora/images/BG_5.JPG",
-      "/anaphora/images/BG_6.JPG",
-      "/anaphora/images/BG_7.JPG",
-      "/anaphora/images/BG_8.JPG",
-      "/anaphora/images/BG_9.JPG",
-      "/anaphora/images/BG_10.JPG"
+      "/images/BG_1.JPG",
+      "/images/BG_2.JPG",
+      "/images/BG_3.JPG",
+      "/images/BG_4.JPG",
+      "/images/BG_5.JPG",
+      "/images/BG_6.JPG",
+      "/images/BG_7.JPG",
+      "/images/BG_8.JPG",
+      "/images/BG_9.JPG",
+      "/images/BG_10.JPG"
     ],
     "Images": [
-      "/anaphora/images/Profile_1.JPG",
-      "/anaphora/images/Profile_2.JPG",
-      "/anaphora/images/Profile_3.JPG",
-      "/anaphora/images/Profile_4.JPG",
-      "/anaphora/images/Profile_5.JPG",
-      "/anaphora/images/Profile_6.JPG",
-      "/anaphora/images/Profile_3.JPG",
-      "/anaphora/images/Profile_4.JPG",
-      "/anaphora/images/Profile_5.JPG",
-      "/anaphora/images/Profile_6.JPG"
+      "/images/Profile_1.JPG",
+      "/images/Profile_2.JPG",
+      "/images/Profile_3.JPG",
+      "/images/Profile_4.JPG",
+      "/images/Profile_5.JPG",
+      "/images/Profile_6.JPG",
+      "/images/Profile_3.JPG",
+      "/images/Profile_4.JPG",
+      "/images/Profile_5.JPG",
+      "/images/Profile_6.JPG"
     ]
   },
   "About": {
-    "Description": "Hello,\n\nI am Aaroophan Varatharajan, a Computer Science and Software Engineering graduate from SLIIT City Uni, affiliated with the University of Bedfordshire, UK, with a Second-Class Upper degree and a Higher Diploma in IT. I was recognized on the Dean's List. I am working as an Associate Database Developer at M Data Zone (Colombo, Sri Lanka) after being promoted from my previous role as Junior Database Developer since September 2024. I have expertise in software development because, my interest is in it, and I have completed several projects, with a strong command of SQL, React.js, Node.js, JavaScript, TypeScript, C#, .NET, Blazor, Python, Machine Learning, Java, PHP, Flask, Selenium, HTML & CSS and Open AI API, along with a good command of English with IELTS - 7.0. My hands on experience at M Data Zone and Alliance Finance Company has made me proficient in C#, .NET, React, NodeJS and databases, including MySQL, PostgreSQL, T-SQL, and MongoDB. Connect with me to learn more about how my skills can contribute to your team.\n\nConnect with me to learn more about how my skills can contribute to your team.\n\nBest Regards,\nAaroophan"
+    "Description": "Hello,\n\nI am Aaroophan Varatharajan, a Computer Science and Software Engineering graduate from SLIIT City Uni, affiliated with the University of Bedfordshire, UK, with a Second-Class Upper degree and a Higher Diploma in IT. I was recognized on the Dean's List. I am working as an Associate Database Developer at M Data Zone (Colombo, Sri Lanka) after being promoted from my previous role as Junior Database Developer since September 2024. I have expertise in software development because, my interest is in it, and I have completed several projects, with a strong command of SQL, React.js, Node.js, JavaScript, TypeScript, C#, .NET, Blazor, Python, Machine Learning, Java, PHP, Flask, Selenium, HTML & CSS and Open AI API, along with a good command of English with IELTS - 7.0. My hands on experience at M Data Zone and Alliance Finance Company has made me proficient in C#, .NET, React, Node and databases, including MySQL, PostgreSQL, T-SQL, and MongoDB. Connect with me to learn more about how my skills can contribute to your team.\n\nConnect with me to learn more about how my skills can contribute to your team.\n\nBest Regards,\nAaroophan"
   },
   "Technologies": [
     [
@@ -127,7 +127,7 @@ export const portfolioData: Portfolio = {
           "React.js"
         ],
         [
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/Node/Node-original.svg",
           "Node.js"
         ],
         [
@@ -255,15 +255,110 @@ export const portfolioData: Portfolio = {
   ],
   "Projects": [
     {
-      "Image": "/anaphora/images/AFCLOD.png",
+      "Image": "/images/anaphora.png",
+      "Name": "anaphora",
+      "Links": [
+        {
+          "Name": "Link",
+          "Icon": "link",
+          "Href": "https://aaroophan.onrender.com/"
+        },
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/Aaroophan/anaphora"
+        }
+      ],
+      "Date": "June 2025",
+      "Description": "Aaroophan's Dynamic Portfolio: Where Your Story Meets Customization, Animation, and Effortless Control.",
+      "Technologies": "React, TypeScript, Tailwind, Framer-Motion, Zod, GitHub"
+    },
+    {
+      "Image": "/images/Tic-Tac-Bot.png",
+      "Name": "Tic-Tac-Bot",
+      "Links": [
+        {
+          "Name": "Link",
+          "Icon": "link",
+          "Href": "https://aaroophan.github.io/Tic-Tac-Bot/"
+        },
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/Aaroophan/Tic-Tac-Bot"
+        }
+      ],
+      "Date": "May 2025",
+      "Description": "Interactive Data Visualization.",
+      "Technologies": "React, TypeScript, Tailwind, Framer-Motion, GitHub"
+    },
+    {
+      "Image": "/images/Grid-ify.png",
+      "Name": "Grid-ify",
+      "Links": [
+        {
+          "Name": "Link",
+          "Icon": "link",
+          "Href": "https://aaroophan.github.io/Grid-ify/"
+        },
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/Aaroophan/Grid-ify"
+        }
+      ],
+      "Date": "May 2025",
+      "Description": "Interactive Data Visualization.",
+      "Technologies": "React, TypeScript, Tailwind,, Framer-Motion Three, Zod, GitHub"
+    },
+    {
+      "Image": "/images/SVG-ify.png",
+      "Name": "SVG-ify",
+      "Links": [
+        {
+          "Name": "Link",
+          "Icon": "link",
+          "Href": "https://aaroophan.github.io/SVG-ify/"
+        },
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/Aaroophan/SVG-ify"
+        }
+      ],
+      "Date": "May 2025",
+      "Description": "This project provides a FastAPI-based API that converts text into SVG with individual path elements for each character component.",
+      "Technologies": "React, TypeScript, Tailwind, FastAPI, Python, GitHub"
+    },
+    {
+      "Image": "/images/PixelPainter.png",
+      "Name": "PixelPainter",
+      "Links": [
+        {
+          "Name": "Link",
+          "Icon": "link",
+          "Href": "https://aaroophan.github.io/PixelPainter/"
+        },
+        {
+          "Name": "GitHub",
+          "Icon": "github",
+          "Href": "https://github.com/Aaroophan/PixelPainter"
+        }
+      ],
+      "Date": "May 2025",
+      "Description": "Create, customize, and export pixel art SVG icons for your projects",
+      "Technologies": "React, TypeScript, Tailwind, GitHub"
+    },
+    {
+      "Image": "/images/AFCLOD.png",
       "Name": "AFC's LOD Web Application",
       "Links": [],
       "Date": "Jul 2024 - Jul 2024",
       "Description": "Developed and implemented a new Letter of Demand (LOD) Web Application for Alliance Finance PLC's LIME banking solution in just one day using the MERN Stack and PostgreSQL. This secondary MERN Stack application integrates with Lime's MongoDB and Finacle's PostgreSQL databases to generate LOD issued details. The Audit and Legal teams use it to input parameters and produce a comprehensive LOD posting list in PDF format for their daily tasks.",
-      "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, PostgreSQL, Bootstrap, Mongoose"
+      "Technologies": "JavaScript, MongoDB, Express, React, Node, PostgreSQL, Bootstrap, Mongoose"
     },
     {
-      "Image": "/anaphora/images/MT.jpeg",
+      "Image": "/images/MT.jpeg",
       "Name": "Mend-Tale-Game",
       "Links": [
         {
@@ -284,10 +379,10 @@ export const portfolioData: Portfolio = {
       ],
       "Date": "Dec 2023 - Apr 2024",
       "Description": "The idea of MendTale is to develop a text-based adventure game website that analyses user's mood by utilizing machine learning and provide feedback through storytelling using Natural Language Processing to promote a sense of emotional-awareness among its users. By combining gaming, personal journaling, machine learning, and storytelling, users will be encouraged to interact with the platform regularly, turning this emotional-awareness promotion into an enjoyable and informative experience.",
-      "Technologies": "JavaScript, Python, MongoDB, ExpressJS, ReactJS, NodeJS, Flask, PyTorch, OpenAI, Bootstrap, Mongoose, GitHub"
+      "Technologies": "JavaScript, Python, MongoDB, Express, React, Node, Flask, PyTorch, OpenAI, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/anaphora/images/Dom.jpeg",
+      "Image": "/images/Dom.jpeg",
       "Name": "CIS-Domeytoe-Game",
       "Links": [
         {
@@ -308,10 +403,10 @@ export const portfolioData: Portfolio = {
       ],
       "Date": "Oct 2023 - Dec 2023",
       "Description": "Developed the game 'Domeytoe' in MERN Stack to use the 'Tomato' API. This Computer Integrated Systems module assignment asks to reflect on various concepts, paradigms and architectures related to Software Development. Software design principles, event-driven programming, interoperability, and virtual identity.",
-      "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, Bootstrap, Mongoose, GitHub"
+      "Technologies": "JavaScript, MongoDB, Express, React, Node, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/anaphora/images/LocDev.jpeg",
+      "Image": "/images/LocDev.jpeg",
       "Name": "LocDev",
       "Links": [
         {
@@ -327,10 +422,10 @@ export const portfolioData: Portfolio = {
       ],
       "Date": "Apr 2024 - Apr 2024",
       "Description": "This one day project manages locations that control multiple devices, with a REST service and user interfaces for storing and displaying information about these locations and their associated devices. All data is securely stored in a MongoDB database.",
-      "Technologies": "JavaScript, MongoDB, ExpressJS, ReactJS, NodeJS, Bootstrap, Mongoose, GitHub"
+      "Technologies": "JavaScript, MongoDB, Express, React, Node, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/anaphora/images/ML.png",
+      "Image": "/images/ML.png",
       "Name": "MovieList",
       "Links": [
         {
@@ -340,11 +435,11 @@ export const portfolioData: Portfolio = {
         }
       ],
       "Date": "Jun 2023 - Jun 2023",
-      "Description": "Developed a movie database website as a project to enhance my ReactJS skills. The website includes various functions such as the Home Page, Movie Page, Series Page, Search, Theme, Sign in, Sign up, Watchlist, Watch History, Dashboard, Profile, Edit Profile.",
-      "Technologies": "HTML, JavaScript, CSS, SQL, PHP, VS Code, ReactJS, MySQL, phpMyAdmin, Bootstrap, GitHub"
+      "Description": "Developed a movie database website as a project to enhance my React skills. The website includes various functions such as the Home Page, Movie Page, Series Page, Search, Theme, Sign in, Sign up, Watchlist, Watch History, Dashboard, Profile, Edit Profile.",
+      "Technologies": "HTML, JavaScript, CSS, SQL, PHP, VS Code, React, MySQL, phpMyAdmin, Bootstrap, GitHub"
     },
     {
-      "Image": "/anaphora/images/EveryMoveProgress.png",
+      "Image": "/images/EveryMoveProgress.png",
       "Name": "EveryMove",
       "Links": [
         {
@@ -358,7 +453,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Java, XML, Studio, Firebase, GitHub"
     },
     {
-      "Image": "/anaphora/images/BB1.png",
+      "Image": "/images/BB1.png",
       "Name": "BaratieBakery",
       "Links": [
         {
@@ -377,7 +472,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "HTML, CSS, JavaScript, jQuery, SQL, PHP, DreamWeaver, MySQL, phpMyAdmin, GitHub"
     },
     {
-      "Image": "/anaphora/images/2D.png",
+      "Image": "/images/2D.png",
       "Name": "2D Animation Short",
       "Links": [
         {
@@ -391,7 +486,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Adobe Illustrator, After Effects"
     },
     {
-      "Image": "/anaphora/images/TT.jpeg",
+      "Image": "/images/TT.jpeg",
       "Name": "TimeTicker",
       "Links": [
         {
@@ -407,7 +502,7 @@ export const portfolioData: Portfolio = {
   ],
   "Experiences": [
     {
-      "Image": "/anaphora/images/MDZ_logo.jpg",
+      "Image": "/images/MDZ_logo.jpg",
       "Title": "Associate Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -428,7 +523,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/anaphora/images/MDZ_logo.jpg",
+      "Image": "/images/MDZ_logo.jpg",
       "Title": "Junior Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -449,7 +544,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/anaphora/images/afcplc_logo.jpeg",
+      "Image": "/images/afcplc_logo.jpeg",
       "Title": "Intern Software Engineer",
       "Company": "Alliance Finance Company PLC",
       "JobType": "Internship",
@@ -469,7 +564,7 @@ export const portfolioData: Portfolio = {
   ],
   "Educations": [
     {
-      "Image": "/anaphora/images/UoB.png",
+      "Image": "/images/UoB.png",
       "Name": "University of Bedfordshire",
       "Title": "B.Sc. Computer Science & Software Engineering",
       "Date": "Sep 2023 - May 2024",
@@ -478,7 +573,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/anaphora/images/SCU.jpg",
+      "Image": "/images/SCU.jpg",
       "Name": "SLIIT City UNI",
       "Title": "Higher Diploma in Information Technology",
       "Date": "May 2021 - Jun 2023",
@@ -487,7 +582,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/anaphora/images/SMC.png",
+      "Image": "/images/SMC.png",
       "Name": "St. Michael's College",
       "Title": "High School",
       "Date": "Jan 2006 - Aug 2019",
@@ -496,7 +591,7 @@ export const portfolioData: Portfolio = {
   ],
   "Certificates": [
     {
-      "Image": "/anaphora/images/LI.png",
+      "Image": "/images/LI.png",
       "Name": "React.js Essential Training",
       "Provider": "LinkedIn",
       "Date": "April 2024",
@@ -506,7 +601,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/anaphora/images/Udemy.png",
+      "Image": "/images/Udemy.png",
       "Name": "The Complete Web Developer Course 3.0",
       "Provider": "Udemy",
       "Date": "June 2024",
@@ -516,7 +611,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/anaphora/images/BritishCouncil.png",
+      "Image": "/images/BritishCouncil.png",
       "Name": "IELTS Academic - 7.0",
       "Provider": "British Council",
       "Date": "Mar 2023",
@@ -543,6 +638,12 @@ export const portfolioData: Portfolio = {
       "Phone": "+94 77 477 3665",
       "Email": "aruni@alliancefinance.lk"
     }
-  ]
+  ],
+  "Contact": {
+    "Email": "mailto:arophn@gmail.com",
+    "Phone": "https://wa.me/+94768505131",
+    "Location" : "Colombo, Sri Lanka.",
+    "Message": "I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, drop a message and I'll get back to you!"
+  }
 };
  
