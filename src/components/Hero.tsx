@@ -166,10 +166,10 @@ export const Hero = () => {
 				href={Social.Href}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="p-3 rounded-full bg-white dark:bg-slate-700/40 backdrop-blur-sm shadow-lg  hover:scale-100 transition-all text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+				className="p-2 lg:p-5 rounded-full bg-white dark:bg-slate-700/40 backdrop-blur-sm shadow-lg  hover:scale-100 transition-all text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
 				aria-label={Social.Name}
 			>
-				<IconComponent className="w-5 h-5" />
+				<IconComponent className="w-6 h-6" />
 			</motion.a>
 		)
 	})
@@ -337,19 +337,19 @@ export const Hero = () => {
 						))}
 					</h1>
             </motion.div>
-			<h4 className="font-mono font-bold text-center mb-6 cursor-default">
+			<h2 className="font-mono font-bold text-center mb-6 cursor-default">
 				{portfolioData.Main.Tags[currentTagIndex].split("").map((letter, index) => (
 					<motion.span
 						key={index}
 						initial={{ opacity: 0 }}
 						animate={isVisible && isInView ? { opacity: 1 } : { opacity: 0 }}
 						transition={{ duration: 0.025, delay: index * 0.01 }}
-						className="bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent lg:m-1 hover:text-primary dark:hover:text-primary transition-colors"
+						className="lg:text-xl bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent lg:m-1 hover:text-primary dark:hover:text-primary transition-colors"
 					>
 						{letter}
 					</motion.span>
 				))}
-			</h4>
+			</h2>
             
             <motion.div
 				initial={{ opacity: 0, y: 20 }}

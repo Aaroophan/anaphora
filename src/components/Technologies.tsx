@@ -81,7 +81,7 @@ export const Technologies = () => {
                       type: 'spring',
                     }}
                     whileHover={{ scale: 1.25 }}
-                    className="flex flex-col items-center p-4 transition-all duration-300 rounded-lg border-l-2 border-primary shadow-lg hover:shadow-xl hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
+                    className="flex flex-col items-center p-4 transition-all duration-300 rounded-lg border-l-2 border-primary shadow-lg hover:shadow-xl hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-blue-900/10 backdrop-blur-sm"
                   >
                     <div className="w-12 h-12 mb-3 flex items-center justify-center">
                       <img 

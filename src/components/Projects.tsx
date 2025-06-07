@@ -1,7 +1,6 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
-import type { Project } from '../types/portfolio';
 import { portfolioData } from '../data/portfolio';
 
 export const Projects = () => {
@@ -60,7 +59,7 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="Projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,14 +88,14 @@ export const Projects = () => {
               key={project.Name}
               initial={{ opacity: 0}}
               animate={isInViews[index] ? { opacity: 1} : { opacity: 0}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.01 }}
                 className="overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary shadow-lg hover:shadow-xl hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
             >
               <div className="h-48 overflow-hidden">
                 <img 
                   src={project.Image} 
                   alt={project.Name} 
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-fit transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0';
                   }}

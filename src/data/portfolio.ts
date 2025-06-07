@@ -46,28 +46,28 @@ export const portfolioData: Portfolio = {
       }
     ],
     "Backgrounds": [
-      "/images/BG_1.JPG",
-      "/images/BG_2.JPG",
-      "/images/BG_3.JPG",
-      "/images/BG_4.JPG",
-      "/images/BG_5.JPG",
-      "/images/BG_6.JPG",
-      "/images/BG_7.JPG",
-      "/images/BG_8.JPG",
-      "/images/BG_9.JPG",
-      "/images/BG_10.JPG"
+      "/images/BG_1-min.JPG",
+      "/images/BG_2-min.JPG",
+      "/images/BG_3-min.JPG",
+      "/images/BG_4-min.JPG",
+      "/images/BG_5-min.JPG",
+      "/images/BG_6-min.JPG",
+      "/images/BG_7-min.JPG",
+      "/images/BG_8-min.JPG",
+      "/images/BG_9-min.JPG",
+      "/images/BG_10-min.JPG"
     ],
     "Images": [
-      "/images/Profile_1.JPG",
-      "/images/Profile_2.JPG",
-      "/images/Profile_3.JPG",
-      "/images/Profile_4.JPG",
-      "/images/Profile_5.JPG",
-      "/images/Profile_6.JPG",
-      "/images/Profile_3.JPG",
-      "/images/Profile_4.JPG",
-      "/images/Profile_5.JPG",
-      "/images/Profile_6.JPG"
+      "/images/Profile_1-min.JPG",
+      "/images/Profile_2-min.JPG",
+      "/images/Profile_3-min.JPG",
+      "/images/Profile_4-min.JPG",
+      "/images/Profile_5-min.JPG",
+      "/images/Profile_6-min.JPG",
+      "/images/Profile_3-min.JPG",
+      "/images/Profile_4-min.JPG",
+      "/images/Profile_5-min.JPG",
+      "/images/Profile_6-min.JPG"
     ]
   },
   "About": {
@@ -255,7 +255,7 @@ export const portfolioData: Portfolio = {
   ],
   "Projects": [
     {
-      "Image": "/images/anaphora.png",
+      "Image": "/images/anaphora-min.JPG",
       "Name": "anaphora",
       "Links": [
         {
@@ -270,11 +270,11 @@ export const portfolioData: Portfolio = {
         }
       ],
       "Date": "June 2025",
-      "Description": "Aaroophan's Dynamic Portfolio: Where Your Story Meets Customization, Animation, and Effortless Control.",
+      "Description": "Developed a fully customizable, data-driven portfolio system where each user has a unique URL and personalized content. Enabled real-time content updates, interactive animations, responsive layouts, and 3D visual elements—all without requiring code changes. Prioritized performance, accessibility, and seamless user experience across devices.",
       "Technologies": "React, TypeScript, Tailwind, Framer-Motion, Zod, GitHub"
     },
     {
-      "Image": "/images/Tic-Tac-Bot.png",
+      "Image": "/images/Tic-Tac-Bot-min.JPG",
       "Name": "Tic-Tac-Bot",
       "Links": [
         {
@@ -289,11 +289,11 @@ export const portfolioData: Portfolio = {
         }
       ],
       "Date": "May 2025",
-      "Description": "Interactive Data Visualization.",
+      "Description": "Designed a strategy-driven Tic Tac Toe platform featuring Classic, Super, and Continuous game modes with AI opponents, adaptive difficulty, and AI vs AI simulations. Included innovative mechanics like decision-tree visualizations, interactive tutorials, and persistent play through dynamic board updates. Prioritized user engagement with responsive UI, intuitive controls, and a polished gameplay experience.",
       "Technologies": "React, TypeScript, Tailwind, Framer-Motion, GitHub"
     },
     {
-      "Image": "/images/Grid-ify.png",
+      "Image": "/images/Grid-ify-min.JPG",
       "Name": "Grid-ify",
       "Links": [
         {
@@ -308,11 +308,11 @@ export const portfolioData: Portfolio = {
         }
       ],
       "Date": "May 2025",
-      "Description": "Interactive Data Visualization.",
-      "Technologies": "React, TypeScript, Tailwind,, Framer-Motion Three, Zod, GitHub"
+      "Description": "Built an interactive 3D spatial data editor that lets users input and visualize coordinates in real time. Designed a seamless experience where data entry (via a spreadsheet-style interface or raw input) instantly reflects in a dynamic 3D scene with support for point, line, and vector render modes. Enabled full control over axis naming, graph scaling, and scene manipulation, tailored for educators, engineers, and designers working with spatial data.",
+      "Technologies": "React, TypeScript, Tailwind, Framer-Motion Three, Zod, GitHub"
     },
     {
-      "Image": "/images/SVG-ify.png",
+      "Image": "/images/SVG-ify-min.JPG",
       "Name": "SVG-ify",
       "Links": [
         {
@@ -327,11 +327,11 @@ export const portfolioData: Portfolio = {
         }
       ],
       "Date": "May 2025",
-      "Description": "This project provides a FastAPI-based API that converts text into SVG with individual path elements for each character component.",
+      "Description": "Built an API that converts text into clean, scalable SVGs with individual path elements per character. Enabled real-time font selection from web-safe and Google Fonts, with customizable styling, spacing, and persistent font preferences. Designed for easy integration into design tools with graceful fallbacks and high-quality vector output.",
       "Technologies": "React, TypeScript, Tailwind, FastAPI, Python, GitHub"
     },
     {
-      "Image": "/images/PixelPainter.png",
+      "Image": "/images/PixelPainter-min.JPG",
       "Name": "PixelPainter",
       "Links": [
         {
@@ -346,11 +346,11 @@ export const portfolioData: Portfolio = {
         }
       ],
       "Date": "May 2025",
-      "Description": "Create, customize, and export pixel art SVG icons for your projects",
+      "Description": "Created an interactive web app for designing customizable pixel art icons using a grid-based editor. Enabled features like zoom, undo/redo, fill/erase tools, and export options for clean SVG files or React-ready JSX/TSX code. Included advanced customization (color palettes, stroke/size options), responsive UI, and local save/load functionality for a seamless design workflow.",
       "Technologies": "React, TypeScript, Tailwind, GitHub"
     },
     {
-      "Image": "/images/AFCLOD.png",
+      "Image": "/images/AFCLOD-min.JPG",
       "Name": "AFC's LOD Web Application",
       "Links": [],
       "Date": "Jul 2024 - Jul 2024",
@@ -358,7 +358,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, Express, React, Node, PostgreSQL, Bootstrap, Mongoose"
     },
     {
-      "Image": "/images/MT.jpeg",
+      "Image": "/images/MT-min.JPG",
       "Name": "Mend-Tale-Game",
       "Links": [
         {
@@ -382,7 +382,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, Python, MongoDB, Express, React, Node, Flask, PyTorch, OpenAI, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/images/Dom.jpeg",
+      "Image": "/images/Dom-min.JPG",
       "Name": "CIS-Domeytoe-Game",
       "Links": [
         {
@@ -406,7 +406,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, Express, React, Node, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/images/LocDev.jpeg",
+      "Image": "/images/LocDev-min.JPG",
       "Name": "LocDev",
       "Links": [
         {
@@ -425,7 +425,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "JavaScript, MongoDB, Express, React, Node, Bootstrap, Mongoose, GitHub"
     },
     {
-      "Image": "/images/ML.png",
+      "Image": "/images/ML-min.JPG",
       "Name": "MovieList",
       "Links": [
         {
@@ -439,7 +439,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "HTML, JavaScript, CSS, SQL, PHP, VS Code, React, MySQL, phpMyAdmin, Bootstrap, GitHub"
     },
     {
-      "Image": "/images/EveryMoveProgress.png",
+      "Image": "/images/EveryMoveProgress-min.JPG",
       "Name": "EveryMove",
       "Links": [
         {
@@ -453,7 +453,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Java, XML, Studio, Firebase, GitHub"
     },
     {
-      "Image": "/images/BB1.png",
+      "Image": "/images/BB1-min.JPG",
       "Name": "BaratieBakery",
       "Links": [
         {
@@ -472,7 +472,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "HTML, CSS, JavaScript, jQuery, SQL, PHP, DreamWeaver, MySQL, phpMyAdmin, GitHub"
     },
     {
-      "Image": "/images/2D.png",
+      "Image": "/images/2D-min.JPG",
       "Name": "2D Animation Short",
       "Links": [
         {
@@ -486,7 +486,7 @@ export const portfolioData: Portfolio = {
       "Technologies": "Adobe Illustrator, After Effects"
     },
     {
-      "Image": "/images/TT.jpeg",
+      "Image": "/images/TT-min.JPG",
       "Name": "TimeTicker",
       "Links": [
         {
@@ -564,7 +564,7 @@ export const portfolioData: Portfolio = {
   ],
   "Educations": [
     {
-      "Image": "/images/UoB.png",
+      "Image": "/images/UoB-min.JPG",
       "Name": "University of Bedfordshire",
       "Title": "B.Sc. Computer Science & Software Engineering",
       "Date": "Sep 2023 - May 2024",
@@ -573,7 +573,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/images/SCU.jpg",
+      "Image": "/images/SCU-min.JPG",
       "Name": "SLIIT City UNI",
       "Title": "Higher Diploma in Information Technology",
       "Date": "May 2021 - Jun 2023",
@@ -582,7 +582,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/images/SMC.png",
+      "Image": "/images/SMC-min.JPG",
       "Name": "St. Michael's College",
       "Title": "High School",
       "Date": "Jan 2006 - Aug 2019",
@@ -591,7 +591,7 @@ export const portfolioData: Portfolio = {
   ],
   "Certificates": [
     {
-      "Image": "/images/LI.png",
+      "Image": "/images/LI-min.JPG",
       "Name": "React.js Essential Training",
       "Provider": "LinkedIn",
       "Date": "April 2024",
@@ -601,7 +601,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/images/Udemy.png",
+      "Image": "/images/Udemy-min.JPG",
       "Name": "The Complete Web Developer Course 3.0",
       "Provider": "Udemy",
       "Date": "June 2024",
@@ -611,7 +611,7 @@ export const portfolioData: Portfolio = {
       }
     },
     {
-      "Image": "/images/BritishCouncil.png",
+      "Image": "/images/BritishCouncil-min.JPG",
       "Name": "IELTS Academic - 7.0",
       "Provider": "British Council",
       "Date": "Mar 2023",

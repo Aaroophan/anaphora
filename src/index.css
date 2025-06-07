@@ -8,6 +8,9 @@
 :root {
   --primary-color: #3B82F6;
   --secondary-color: #9333EA;
+  --light-shadow-color: rgba(25, 25, 50, 0.9);
+  --dark-shadow-color: rgba(220, 230, 255, 0.9);
+  --shadow-color: rgba(25, 25, 50, 0.9);
 }
 
 body {
@@ -27,6 +30,7 @@ html {
 
 .dark {
   @apply bg-slate-900 text-slate-100;
+  --shadow-color: rgba(0, 72, 255, 0.2);
 }
 
 @layer components {
