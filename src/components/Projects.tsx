@@ -2,6 +2,7 @@ import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
+import { ParallaxSection } from './effects/ParallaxSection';
 
 export const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -84,12 +85,14 @@ export const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioData.Projects.map((project, index) => (
             <div ref={refs[index]}>
+            <ParallaxSection>
+            {/* <DynamicShadow> */}
             <motion.div
               key={project.Name}
               initial={{ opacity: 0}}
               animate={isInViews[index] ? { opacity: 1} : { opacity: 0}}
               transition={{ duration: 0.5, delay: index * 0.01 }}
-                className="overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary shadow-lg hover:shadow-xl hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
+              className="overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
             >
               <div className="h-48 overflow-hidden">
                 <img 
@@ -105,24 +108,24 @@ export const Projects = () => {
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                      {project.Name.split('').map((letter, idx) => (
-                        <motion.a
-                          key={idx}
-                          initial={{ opacity: 0 }}
-                          animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
-                          transition={{ duration: 0.25, delay: idx * 0.05 }}
-                          className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
-                        >
-                          {letter}
-                        </motion.a>
-                      ))}
+                    {project.Name.split('').map((letter, idx) => (
+                      <motion.a
+                        key={idx}
+                        initial={{ opacity: 0 }}
+                        animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{ duration: 0.25, delay: idx * 0.05 }}
+                        className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
+                      >
+                        {letter}
+                      </motion.a>
+                    ))}
                   </h3>
                   <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
                     {project.Date}
                   </span>
                 </div>
                 
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-all duration-500  line-clamp-5 hover:line-clamp-none">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-all duration-500 line-clamp-5 hover:line-clamp-none">
                   {project.Description}
                 </p>
                 
@@ -159,6 +162,8 @@ export const Projects = () => {
                 )}
               </div>
             </motion.div>
+              {/* </DynamicShadow> */}
+              </ParallaxSection>
             </div>
           ))}
         </div>

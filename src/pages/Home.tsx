@@ -10,6 +10,7 @@ import { References } from '../components/References';
 import { Contact } from '../components/Contact';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
+import { DynamicBackground } from '../components/effects/DynamicBackground';
 
 export const Home = () => {
 	return (
@@ -19,7 +20,7 @@ export const Home = () => {
 		exit={{ opacity: 0 }}
 		transition={{ duration: 0.5 }}
 		>
-			
+			<DynamicBackground />
 			<Header/>
 
 			<Hero/>
@@ -40,8 +41,7 @@ export const Home = () => {
 
 			<Contact />
 
-			<Footer/>
-		
+			<Footer />
 		</motion.div>
 	);
 };

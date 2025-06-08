@@ -1,8 +1,8 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, MapPin, Building } from 'lucide-react';
-import type { Experience as ExperienceType } from '../types/portfolio';
 import { portfolioData } from '../data/portfolio';
+import { ParallaxSection } from './effects/ParallaxSection';
 
 export const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -70,6 +70,7 @@ export const Experience = () => {
         <div className="space-y-12 max-w-4xl mx-auto">
           {portfolioData.Experiences.map((experience, index) => (
             <div ref={refs[index]}>
+            <ParallaxSection>
             <motion.div
               key={`${experience.Company}-${index}`}
               initial={{ opacity: 0, y: 50 }}
@@ -151,6 +152,7 @@ export const Experience = () => {
                 </ul>
               </div>
             </motion.div>
+            </ParallaxSection>
             </div>
           ))}
         </div>

@@ -502,7 +502,7 @@ export const portfolioData: Portfolio = {
   ],
   "Experiences": [
     {
-      "Image": "/images/MDZ_logo.jpg",
+      "Image": "/images/MDZ_logo-min.JPG",
       "Title": "Associate Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -523,7 +523,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/images/MDZ_logo.jpg",
+      "Image": "/images/MDZ_logo-min.JPG",
       "Title": "Junior Database Developer",
       "Company": "M Data Zone (PVT) LTD",
       "JobType": "Full-time",
@@ -544,7 +544,7 @@ export const portfolioData: Portfolio = {
       ]
     },
     {
-      "Image": "/images/afcplc_logo.jpeg",
+      "Image": "/images/afcplc_logo-min.JPG",
       "Title": "Intern Software Engineer",
       "Company": "Alliance Finance Company PLC",
       "JobType": "Internship",

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, ReactNode } from 'react';
 import { motion, useInView } from "framer-motion";
 import { portfolioData } from '../data/portfolio';
 import * as LucideIcons from 'lucide-react';
+import { ParallaxSection } from './effects/ParallaxSection';
 
 export const Hero = () => {
 	const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);

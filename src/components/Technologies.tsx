@@ -1,6 +1,7 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
+import { ParallaxSection } from './effects/ParallaxSection';
 
 export const Technologies = () => {
 	const ref1 = useRef<HTMLDivElement>(null);
@@ -50,6 +51,7 @@ export const Technologies = () => {
         <div className="space-y-12">
           {portfolioData.Technologies.map(([category, skills], categoryIndex) => (
             <div key={category}  ref={refs[categoryIndex]}>
+            <ParallaxSection marginEffect={0.5}>
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView[categoryIndex] ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -69,7 +71,7 @@ export const Technologies = () => {
 				))}
               </motion.h3>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 ">
+              <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-4 ">
                 {skills.map(([icon, name], skillIndex) => (
                   <motion.div
                     key={`${name}-${skillIndex}`}
@@ -97,6 +99,8 @@ export const Technologies = () => {
                   </motion.div>
                 ))}
               </div>
+              
+              </ParallaxSection>
             </div>
           ))}
         </div>
