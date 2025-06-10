@@ -1,7 +1,6 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, Award } from 'lucide-react';
-import type { Education as EducationType } from '../types/portfolio';
 import { portfolioData } from '../data/portfolio';
 import { ParallaxSection } from './effects/ParallaxSection';
 
@@ -71,7 +70,7 @@ export const Education = () => {
         <div className="space-y-12 max-w-4xl mx-auto">
           {portfolioData.Educations.map((education, index) => (
             <div ref={refs[index]}>
-            <ParallaxSection>
+            <ParallaxSection className=' backdrop-blur-sm'>
             <motion.div
               key={`${education.Name}-${index}`}
               initial={{ opacity: 0, y: 50 }}

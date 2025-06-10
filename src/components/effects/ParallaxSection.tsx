@@ -11,8 +11,8 @@ interface ParallaxSectionProps {
 export const ParallaxSection = ({ 
   children, 
   className = '', 
-  speed = 0.5,
-  marginEffect = 0.7
+  speed = 0.2,
+  marginEffect = 0.3
 }: ParallaxSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -20,24 +20,22 @@ export const ParallaxSection = ({
     offset: ["start 90%", "end 30%"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100 * speed]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
-  const marginBottom = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -100 * marginEffect]
-  );
+  // const y = useTransform(scrollYProgress, [0, 1], [0, -100 * speed]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
+  // const marginBottom = useTransform(
+  //   scrollYProgress,
+  //   [0, 1],
+  //   [0, -100 * marginEffect]
+  // );
 
   return (
     <motion.div
       ref={ref}
       className={`${className}`}
       style={{
-        y,
-        opacity,
         scale,
-        marginBottom,
+        // marginBottom,
       }}
     >
       {children}

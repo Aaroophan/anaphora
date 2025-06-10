@@ -70,7 +70,7 @@ export const Experience = () => {
         <div className="space-y-12 max-w-4xl mx-auto">
           {portfolioData.Experiences.map((experience, index) => (
             <div ref={refs[index]}>
-            <ParallaxSection>
+            <ParallaxSection >
             <motion.div
               key={`${experience.Company}-${index}`}
               initial={{ opacity: 0, y: 50 }}

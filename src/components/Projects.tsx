@@ -6,7 +6,7 @@ import { ParallaxSection } from './effects/ParallaxSection';
 
 export const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.1 });
+  const isInView = useInView(containerRef, { once: false });
 
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
@@ -60,12 +60,12 @@ export const Projects = () => {
   };
 
   return (
-    <section id="Projects" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={containerRef}>
+    <section id="Projects" className="py-20 bg-gray-50 dark:bg-gray-900" ref={containerRef}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.02 }}
         >
           <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
             {"Projects".split('').map((letter, idx) => (
@@ -85,7 +85,7 @@ export const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioData.Projects.map((project, index) => (
             <div ref={refs[index]}>
-            <ParallaxSection>
+            <ParallaxSection className='backdrop-blur-sm'>
             {/* <DynamicShadow> */}
             <motion.div
               key={project.Name}
