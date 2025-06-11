@@ -1,4 +1,4 @@
-import  { useRef } from 'react';
+import  { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
@@ -45,6 +45,21 @@ export const Projects = () => {
   const refs = [ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, ref10, ref11, ref12, ref13, ref14, ref15, ref16];
   const isInViews = [isInView1, isInView2, isInView3, isInView4, isInView5, isInView6, isInView7, isInView8, isInView9, isInView10, isInView11, isInView12, isInView13, isInView14, isInView15, isInView16];
 
+  // const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   const el = scrollContainerRef.current;
+  //   if (!el) return;
+
+  //   const handleWheel = (e: WheelEvent) => {
+  //     if (e.deltaY === 0) return;
+  //     e.preventDefault();
+  //     el.scrollBy({ left: e.deltaY, behavior: 'smooth' });
+  //   };
+
+  //   el.addEventListener('wheel', handleWheel, { passive: false });
+  //   return () => el.removeEventListener('wheel', handleWheel);
+  // }, []);
 
   const getLinkIcon = (icon: string) => {
     switch (icon.toLowerCase()) {
@@ -81,9 +96,8 @@ export const Projects = () => {
             ))}
           </h2>
         </motion.div>
-
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-auto max-h-[calc(100vh-10px)]"> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* ref={scrollContainerRef}  */}
+        <div className="flex gap-6 overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory max-w-full">
           {portfolioData.Projects.map((project, index) => (
             <div ref={refs[index]}>
             <ParallaxSection className='backdrop-blur-sm'>
@@ -93,7 +107,7 @@ export const Projects = () => {
               initial={{ opacity: 0}}
               animate={isInViews[index] ? { opacity: 1} : { opacity: 0}}
               transition={{ duration: 0.5, delay: index * 0.01 }}
-              className="overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
+              className="w-[350px] md:w-[350px] lg:w-[380px] shrink-0 snap-start overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
             >
               <div className="h-48 overflow-hidden">
                 <img 
@@ -122,16 +136,21 @@ export const Projects = () => {
                     ))}
                   </h3>
                   <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
-                    {project.Date}
                   </span>
                 </div>
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  </h3>
+                  <p className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                    {project.Date}
+                  </p>
+                </div>
                 
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-all duration-500 line-clamp-5 hover:line-clamp-none">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-all duration-500 line-clamp-3 hover:line-clamp-none">
                   {project.Description}
                 </p>
                 
                 <div className="mb-6">
-                  <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Technologies:</div>
                   <div className="flex flex-wrap gap-2">
                     {project.Technologies.split(', ').map((tech) => (
                       <span

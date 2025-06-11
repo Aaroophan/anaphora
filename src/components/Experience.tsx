@@ -1,4 +1,4 @@
-import  { useRef } from 'react';
+import  { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, MapPin, Building } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
@@ -43,6 +43,8 @@ export const Experience = () => {
 
   const refs = [ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, ref10, ref11, ref12, ref13, ref14, ref15, ref16];
   const isInViews = [isInView1, isInView2, isInView3, isInView4, isInView5, isInView6, isInView7, isInView8, isInView9, isInView10, isInView11, isInView12, isInView13, isInView14, isInView15, isInView16];
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <section id="experience" className="py-20 bg-slate-500/20 dark:bg-gray-500/20 backdrop-blur-sm rounded-xl">
@@ -135,21 +137,36 @@ export const Experience = () => {
                 <h5 className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                   {experience.Location}
                 </h5>
-                
-                <ul className="space-y-1">
-                    {experience.Description.map((item, idx) => (
-                    <motion.li
-                      key={idx}
-                      initial={{ opacity: 0 }}
-                      animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
-                      transition={{ duration: 0.25, delay: idx * 0.05 }}
-                      className="flex items-start gap-2"
-                    >
-                      <span className="text-primary">•</span>
-                      <span className="text-gray-700 dark:text-gray-300 text-sm">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+
+                <button
+					onClick={() => setIsOpen(!isOpen)}
+					className="text-sm font-medium text-primary px-1 py-2 rounded-md text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors hover:ring-1 hover:ring-slate-700 dark:hover:ring-slate-300"
+				>
+					{isOpen ? 'Hide Details ▲' : 'Show Details ▼'}
+				</button>
+				<motion.div
+					initial={false}
+					animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+					transition={{ duration: 0.3 }}
+					className="overflow-hidden"
+				>
+					<ul className="space-y-1 mt-2">
+						{experience.Description.map((item, idx) => (
+							<motion.li
+								key={idx}
+								initial={{ opacity: 0 }}
+								animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
+								transition={{ duration: 0.25, delay: idx * 0.05 }}
+								className="flex items-start gap-2"
+							>
+								<span className="text-primary">•</span>
+								<span className="text-gray-700 dark:text-gray-300 text-sm">
+									{item}
+								</span>
+							</motion.li>
+						))}
+					</ul>
+				</motion.div>
               </div>
             </motion.div>
             {/* </ParallaxSection> */}

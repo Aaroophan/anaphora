@@ -70,7 +70,7 @@ export const Education = () => {
         <div className="space-y-12 max-w-4xl mx-auto">
           {portfolioData.Educations.map((education, index) => (
             <div ref={refs[index]}>
-            <ParallaxSection className=' backdrop-blur-sm'>
+            {/* <ParallaxSection className=' backdrop-blur-sm'> */}
             <motion.div
               key={`${education.Name}-${index}`}
               initial={{ opacity: 0, y: 50 }}
@@ -142,7 +142,7 @@ export const Education = () => {
                 )}
               </div>
             </motion.div>
-            </ParallaxSection>
+            {/* </ParallaxSection> */}
             </div>
           ))}
         </div>
