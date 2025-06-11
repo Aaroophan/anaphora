@@ -51,7 +51,7 @@ export const Technologies = () => {
         <div className="space-y-12">
           {portfolioData.Technologies.map(([category, skills], categoryIndex) => (
             <div key={category}  ref={refs[categoryIndex]}>
-            <ParallaxSection marginEffect={0.5}>
+            {/* <ParallaxSection marginEffect={0.5}> */}
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView[categoryIndex] ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -100,7 +100,7 @@ export const Technologies = () => {
                 ))}
               </div>
               
-              </ParallaxSection>
+              {/* </ParallaxSection> */}
             </div>
           ))}
         </div>

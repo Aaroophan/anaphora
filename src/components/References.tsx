@@ -71,7 +71,7 @@ export const References = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {portfolioData.References.map((reference, index) => (
             <div ref={refs[index]}>
-            <ParallaxSection className=' backdrop-blur-sm'>
+            {/* <ParallaxSection className=' backdrop-blur-sm'> */}
             <motion.div
               key={`${reference.Name}-${index}`}
               initial={{ opacity: 0, y: 30 }}
@@ -119,7 +119,7 @@ export const References = () => {
                 </div>
               </div>
             </motion.div>
-            </ParallaxSection>
+            {/* </ParallaxSection> */}
             </div>
           ))}
         </div>

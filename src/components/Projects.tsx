@@ -81,7 +81,8 @@ export const Projects = () => {
             ))}
           </h2>
         </motion.div>
-        
+
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-auto max-h-[calc(100vh-10px)]"> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioData.Projects.map((project, index) => (
             <div ref={refs[index]}>
@@ -98,7 +99,7 @@ export const Projects = () => {
                 <img 
                   src={project.Image} 
                   alt={project.Name} 
-                  className="w-full h-full object-fit transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0';
                   }}

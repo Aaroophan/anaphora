@@ -10,7 +10,7 @@ export const About = () => {
 
   return (
     <section id="about" className="snap-start py-20 bg-gray-50 dark:bg-gray-900 cursor-default px-4">
-      <ParallaxSection className='backdrop-blur-sm'>
+      {/* <ParallaxSection className='backdrop-blur-sm'> */}
 		  <div className="container mx-auto px-4 sm:px-6 lg:px-8  transition-all duration-300 rounded-xl border-l-4 border-primary shadow-lg hover:shadow-xl hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-900/40 backdrop-blur-sm py-5" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export const About = () => {
           ))}
         </div>
       </div>
-      </ParallaxSection>
+      {/* </ParallaxSection> */}
     </section>
   );
 };
