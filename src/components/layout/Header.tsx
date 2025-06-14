@@ -1,5 +1,5 @@
-import  { useState, useEffect } from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon} from 'lucide-react';
 import { useThemeStore } from '../../store/themeStore';
@@ -43,20 +43,21 @@ export const Header = () => {
 
 	type NavLink = [string, string | LucideIcon, string];
 	const NavLinksDetails: NavLink[] = [
-		["/anaphora/", LucideIcons.Home, "Home"],
-		["/anaphora/About", LucideIcons.Code2, "About"],
-		["/anaphora/Skills", LucideIcons.ListChecks, "Skills"],
-		["/anaphora/Projects", LucideIcons.Presentation, "Projects"],
-		["/anaphora/Experience", LucideIcons.Building, "Experience"],
-		["/anaphora/Education", LucideIcons.GraduationCap, "Education"],
-		["/anaphora/Certificates", LucideIcons.BadgeCheck, "Certificates"],
-		["/anaphora/Contact", LucideIcons.Contact2, "Contact"]
+		["/", LucideIcons.Home, "Home"],
+		["/About", LucideIcons.Code2, "About"],
+		["/Technologies", LucideIcons.ListChecks, "Technologies"],
+		["/Projects", LucideIcons.Presentation, "Projects"],
+		["/Experience", LucideIcons.Building, "Experience"],
+		["/Education", LucideIcons.GraduationCap, "Education"],
+		["/Certificates", LucideIcons.BadgeCheck, "Certificates"],
+		["/Contact", LucideIcons.Contact2, "Contact"]
 	];
 
 	const NavigationLinks = NavLinksDetails.map((NavLink, index) => {
 		const IconComponent = NavLink[1]
 
 		return(
+			<Link to={NavLink[0]}>
 			<motion.button
 				key={index}
 				initial={{ opacity: 0 }}
@@ -86,9 +87,6 @@ export const Header = () => {
 
 				onClick={() => setIsMenuOpen(false)}
 			>
-				{/* <Link to={NavLink[0]} className={index + 1 === NavLinksDetails.length ?
-							`` :
-							``}> */}
 				<IconComponent className="w-4 h-4 mx-1" />
 				{NavLink[2].split("").map((letter, idx) => (
 					<motion.a
@@ -101,8 +99,8 @@ export const Header = () => {
 						{letter}
 					</motion.a>
 				))}
-				{/* </Link> */}
-			</motion.button>
+				</motion.button>
+			</Link>
 	)})
 
 

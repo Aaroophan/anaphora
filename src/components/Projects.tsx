@@ -1,4 +1,4 @@
-import  { useRef, useEffect } from 'react';
+import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
@@ -97,7 +97,9 @@ export const Projects = () => {
           </h2>
         </motion.div>
         {/* ref={scrollContainerRef}  */}
-        <div className="flex gap-6 overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory max-w-full">
+        {/* <div className="flex gap-6 overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory max-w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-auto max-h-[calc(100vh-10px)]"> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioData.Projects.map((project, index) => (
             <div ref={refs[index]}>
             <ParallaxSection className='backdrop-blur-sm'>
@@ -107,7 +109,7 @@ export const Projects = () => {
               initial={{ opacity: 0}}
               animate={isInViews[index] ? { opacity: 1} : { opacity: 0}}
               transition={{ duration: 0.5, delay: index * 0.01 }}
-              className="w-[350px] md:w-[350px] lg:w-[380px] shrink-0 snap-start overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm"
+              className="w-[350px] md:w-[350px] lg:w-[380px] shrink-0 snap-start overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm shadow-lg hover:shadow-xl"
             >
               <div className="h-48 overflow-hidden">
                 <img 

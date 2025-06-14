@@ -1,7 +1,6 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
-import { ParallaxSection } from './effects/ParallaxSection';
 
 export const Technologies = () => {
 	const ref1 = useRef<HTMLDivElement>(null);

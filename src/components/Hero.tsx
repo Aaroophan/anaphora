@@ -2,11 +2,10 @@ import { useState, useEffect, useRef, ReactNode } from 'react';
 import { motion, useInView } from "framer-motion";
 import { portfolioData } from '../data/portfolio';
 import * as LucideIcons from 'lucide-react';
-import { ParallaxSection } from './effects/ParallaxSection';
 
 export const Hero = () => {
 	const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
-	const [currentBackgroundOpacity, setCurrentBackgroundOpacity] = useState(0.15);
+	// const [currentBackgroundOpacity, setCurrentBackgroundOpacity] = useState(0.15);
 	const [currentTagIndex, setCurrentTagIndex] = useState(0);
 	const [isVisible, setIsVisible] = useState<Boolean>(false);
 	//const { width, height } = useWindowSize();
@@ -14,21 +13,21 @@ export const Hero = () => {
 	const isInView = useInView(ref, { once: false });
 	const [scrolled, setScrolled] = useState(false);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 250) {
-				setScrolled(true);
-			} else {
-				setScrolled(false);
-			}
-		};
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		if (window.scrollY > 250) {
+	// 			setScrolled(true);
+	// 		} else {
+	// 			setScrolled(false);
+	// 		}
+	// 	};
 
-		window.addEventListener('scroll', handleScroll);
+	// 	window.addEventListener('scroll', handleScroll);
 
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+	// 	return () => {
+	// 		window.removeEventListener('scroll', handleScroll);
+	// 	};
+	// }, []);
 
 	const tailwindBorderClasses: string[] = [
 		// General
@@ -233,7 +232,7 @@ export const Hero = () => {
 						className: 'bg-gradient-to-br from-blue-700 to-purple-700 dark:from-blue-500 dark:to-purple-500 bg-clip-text text-transparent',
 					});
 				}
-				setCurrentBackgroundOpacity(Math.random() * 0.1 + 0.1);
+				// setCurrentBackgroundOpacity(Math.random() * 0.1 + 0.1);
 			}, 2000);
 
 			return () => clearInterval(interval);
@@ -278,7 +277,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center py-20 overflow-hidden ">
       {/* Background Image with Overlay */}
-      <div
+      {/* <div
         className={`transition-opacity duration-1000 ease-in-out ${
         scrolled ? 	'fixed inset-0 bg-cover bg-center blur-xs' : 
 					'fixed inset-0 bg-cover bg-center'}`}
@@ -286,7 +285,7 @@ export const Hero = () => {
           backgroundImage: `url(${portfolioData.Main.Backgrounds[currentBackgroundIndex]})`,
 			opacity: scrolled ? currentBackgroundOpacity : 0.5,
         }}
-      />
+      /> */}
       
       {/* Content Container */}
 	<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>

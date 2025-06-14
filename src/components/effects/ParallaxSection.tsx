@@ -11,8 +11,8 @@ interface ParallaxSectionProps {
 export const ParallaxSection = ({ 
   children, 
   className = '', 
-  speed = 0.2,
-  marginEffect = 0.3
+  // speed = 0.2,
+  // marginEffect = 0.3
 }: ParallaxSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
