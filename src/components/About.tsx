@@ -1,12 +1,11 @@
 import { motion, useInView } from 'framer-motion';
-import { portfolioData } from '../data/portfolio';
 import { useRef } from 'react';
-import { ParallaxSection } from './effects/ParallaxSection';
+import Setting from '../utils/Settings';
 
 export const About = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: false });
-  const paragraphs = portfolioData.About.Description.split('\n\n');
+  const paragraphs = Setting.getUserData().About.Description.split('\n\n');
 
   return (
     <section id="about" className="snap-start py-20 bg-gray-50 dark:bg-gray-900 cursor-default px-4">

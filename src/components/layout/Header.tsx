@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon} from 'lucide-react';
 import { useThemeStore } from '../../store/themeStore';
-import { portfolioData } from '../../data/portfolio';
 import * as LucideIcons from 'lucide-react';
+import Setting from '../../utils/Settings';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   const { darkMode, toggleDarkMode } = useThemeStore();
+  const location = useLocation();
+  const { username } = useParams();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
@@ -42,24 +45,57 @@ export const Header = () => {
   }, [isMenuOpen]);
 
 	type NavLink = [string, string | LucideIcon, string];
+	// const NavLinksDetails: NavLink[] = [
+	// 	["/", LucideIcons.Home, "Home"],
+	// 	["/About", LucideIcons.Code2, "About"],
+	// 	["/Technologies", LucideIcons.ListChecks, "Technologies"],
+	// 	["/Projects", LucideIcons.Presentation, "Projects"],
+	// 	["/Experience", LucideIcons.Building, "Experience"],
+	// 	["/Education", LucideIcons.GraduationCap, "Education"],
+	// 	["/Certificates", LucideIcons.BadgeCheck, "Certificates"],
+	// 	["/Contact", LucideIcons.Contact2, "Contact"]
+	// ];
+
+	// const NavLinksDetails: NavLink[] = [
+	// 	[``, LucideIcons.Home, "Home"],
+	// 	[`${Setting.getLocation()}/About`, LucideIcons.Code2, "About"],
+	// 	[`${Setting.getLocation()}/Technologies`, LucideIcons.ListChecks, "Technologies"],
+	// 	[`${Setting.getLocation()}/Projects`, LucideIcons.Presentation, "Projects"],
+	// 	[`${Setting.getLocation()}/Experience`, LucideIcons.Building, "Experience"],
+	// 	[`${Setting.getLocation()}/Education`, LucideIcons.GraduationCap, "Education"],
+	// 	[`${Setting.getLocation()}/Certificates`, LucideIcons.BadgeCheck, "Certificates"],
+	// 	[`${Setting.getLocation()}/Contact`, LucideIcons.Contact2, "Contact"]
+	// ];
+
+
+	// const NavLinksDetails: NavLink[] = [
+	// 	[`/`, LucideIcons.Home, "Home"],
+	// 	[`Aaroophan/About`, LucideIcons.Code2, "About"],
+	// 	[`Aaroophan/Technologies`, LucideIcons.ListChecks, "Technologies"],
+	// 	[`Aaroophan/Projects`, LucideIcons.Presentation, "Projects"],
+	// 	[`Aaroophan/Experience`, LucideIcons.Building, "Experience"],
+	// 	[`Aaroophan/Education`, LucideIcons.GraduationCap, "Education"],
+	// 	[`Aaroophan/Certificates`, LucideIcons.BadgeCheck, "Certificates"],
+	// 	[`Aaroophan/Contact`, LucideIcons.Contact2, "Contact"]
+	// ];
+
 	const NavLinksDetails: NavLink[] = [
-		["/", LucideIcons.Home, "Home"],
-		["/About", LucideIcons.Code2, "About"],
-		["/Technologies", LucideIcons.ListChecks, "Technologies"],
-		["/Projects", LucideIcons.Presentation, "Projects"],
-		["/Experience", LucideIcons.Building, "Experience"],
-		["/Education", LucideIcons.GraduationCap, "Education"],
-		["/Certificates", LucideIcons.BadgeCheck, "Certificates"],
-		["/Contact", LucideIcons.Contact2, "Contact"]
+		[`/${username}`, LucideIcons.Home, "Home"],
+		[`About`, LucideIcons.Code2, "About"],
+		[`Technologies`, LucideIcons.ListChecks, "Technologies"],
+		[`Projects`, LucideIcons.Presentation, "Projects"],
+		[`Experience`, LucideIcons.Building, "Experience"],
+		[`Education`, LucideIcons.GraduationCap, "Education"],
+		[`Certificates`, LucideIcons.BadgeCheck, "Certificates"],
+		[`Contact`, LucideIcons.Contact2, "Contact"]
 	];
 
 	const NavigationLinks = NavLinksDetails.map((NavLink, index) => {
 		const IconComponent = NavLink[1]
 
 		return(
-			<Link to={NavLink[0]}>
+			<Link to={NavLink[0]} key={"NavigationLink-" + index}>
 			<motion.button
-				key={index}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -89,29 +125,29 @@ export const Header = () => {
 			>
 				<IconComponent className="w-4 h-4 mx-1" />
 				{NavLink[2].split("").map((letter, idx) => (
-					<motion.a
-						key={idx}
+					<motion.span
+						key={"NavLink-" + idx}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.1, delay: idx * 0.1 }}
 						className="rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
 					>
 						{letter}
-					</motion.a>
+					</motion.span>
 				))}
 				</motion.button>
 			</Link>
 	)})
 
 
-	const HeaderSocials = portfolioData.Main.Links.map((HeaderSocial, index) => {
+	const HeaderSocials = Setting.getUserData().Main.Links.map((HeaderSocial, index) => {
 		const IconComponent = LucideIcons[HeaderSocial.Icon as keyof typeof LucideIcons];
 
 		if (!IconComponent) return null;
 
 		return(
 			<motion.a
-				key={index}
+				key={"HeaderSocial-" + index}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -154,14 +190,14 @@ export const Header = () => {
 		<div className={isMenuOpen ? "container mx-auto px-4 sm:px-2 lg:px-3 bg-white/50 dark:bg-gray-900/50  backdrop-blur-md": "container mx-auto px-4 sm:px-2 lg:px-3 "}>
         <div className="flex justify-between items-center">
 				<a className="flex items-center text-xl font-bold text-primary cursor-default">
-					  <LucideIcons.Linkedin className="me-5 inline-block no-underline text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" onClick={() => window.location.href = portfolioData.Main.Links[1].Href} />
-            	{portfolioData.Main.Name.split(" ")[0].split("").map((letter, index) => (
+					  <LucideIcons.Linkedin className="me-5 inline-block no-underline text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" onClick={() => window.location.href = Setting.getUserData().Main.Links[1].Href} />
+            	{Setting.getUserData().Main.Name.split(" ")[0].split("").map((letter, index) => (
 					<motion.span
-						key={index}
+						key={"Name-" + index}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.1, delay: index * 0.1 }}
-						onClick={() => location.reload()} 
+						onClick={() => { <Navigate to="/:username" replace /> }}
 					>
 						<motion.span
 							className="inline-block no-underline text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"

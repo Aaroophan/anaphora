@@ -1,8 +1,7 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, Award } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
-import { ParallaxSection } from './effects/ParallaxSection';
+import Setting from '../utils/Settings';
 
 export const Education = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,7 +55,7 @@ export const Education = () => {
           <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
             {"Education".split('').map((letter, idx) => (
               <motion.a
-                key={idx}
+                key={`${"project.Name"}-${idx}`}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.05, delay: idx * 0.05 }}
@@ -68,11 +67,10 @@ export const Education = () => {
         </motion.div>
         
         <div className="space-y-12 max-w-4xl mx-auto">
-          {portfolioData.Educations.map((education, index) => (
-            <div ref={refs[index]}>
+          {Setting.getUserData().Educations.map((education, index) => (
+            <div ref={refs[index]} key={`${education.Name}-${index}`}>
             {/* <ParallaxSection className=' backdrop-blur-sm'> */}
             <motion.div
-              key={`${education.Name}-${index}`}
               initial={{ opacity: 0, y: 50 }}
                 animate={isInViews[index] ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -105,7 +103,7 @@ export const Education = () => {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     {education.Title.split('').map((letter, idx) => (
                       <motion.a
-                        key={idx}
+                        key={`${education.Title}-${index+idx}`}
                         initial={{ opacity: 0 }}
                         animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ duration: 0.25, delay: idx * 0.05 }}
@@ -119,7 +117,7 @@ export const Education = () => {
                 <h4 className="text-lg font-medium text-primary mb-4">
                     {education.Name.split('').map((letter, idx) => (
                       <motion.a
-                        key={idx}
+                        key={`${education.Name}-${index+idx}`}
                         initial={{ opacity: 0 }}
                         animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ duration: 0.25, delay: idx * 0.05 }}
@@ -133,7 +131,7 @@ export const Education = () => {
                 {education.Description.length > 0 && (
                   <ul className="space-y-2">
                     {education.Description.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                      <li key={`${education.Description}-${index+itemIndex}`} className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
                         <Award className="w-4 h-4 text-primary" />
                         {item}
                       </li>

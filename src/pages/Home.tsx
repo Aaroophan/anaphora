@@ -11,7 +11,8 @@ import { Footer } from '../components/layout/Footer';
 import { ProjectsSlider } from '../components/ProjectsSlider'; 
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { portfolioData } from '../data/portfolio';
+import Setting from '../utils/Settings';
+import { Header } from '../components/layout/Header';
 
 export const Home = () => {
 	const [scrolled, setScrolled] = useState(false);
@@ -41,11 +42,11 @@ export const Home = () => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % portfolioData.Main.Backgrounds.length);
+			setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % Setting.getUserData().Main.Backgrounds.length);
 		}, 20000);
 
 		return () => clearInterval(interval);
-	}, [portfolioData.Main.Backgrounds.length]);
+	}, [Setting.getUserData().Main.Backgrounds.length]);
 
 
 	useEffect(() => {
@@ -66,7 +67,7 @@ export const Home = () => {
 			<div
 				className={`transition-opacity duration-1000 ease-in-out ${scrolled ? 'fixed inset-0 bg-cover bg-center blur-xs' : 'fixed inset-0 bg-cover bg-center'}`}
 				style={{
-					backgroundImage: `url(${portfolioData.Main.Backgrounds[currentBackgroundIndex]})`,
+					backgroundImage: `url(${Setting.getUserData().Main.Backgrounds[currentBackgroundIndex]})`,
 					opacity: Location.pathname.split("/")[1] == "" ? (scrolled ? currentBackgroundOpacity : 0.5) : 0.5,
 				}}
 			/>

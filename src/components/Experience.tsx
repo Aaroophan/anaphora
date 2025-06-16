@@ -1,8 +1,7 @@
 import  { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, MapPin, Building } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
-import { ParallaxSection } from './effects/ParallaxSection';
+import Setting from '../utils/Settings';
 
 export const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,7 +56,7 @@ export const Experience = () => {
           <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
             {"Work Experience".split('').map((letter, idx) => (
               <motion.a
-                key={idx}
+                key={"ExperienceTitle-"+ idx}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.05, delay: idx * 0.05 }}
@@ -70,11 +69,10 @@ export const Experience = () => {
         </motion.div>
         
         <div className="space-y-12 max-w-4xl mx-auto">
-          {portfolioData.Experiences.map((experience, index) => (
-            <div ref={refs[index]}>
+          {Setting.getUserData().Experiences.map((experience, index) => (
+            <div ref={refs[index]} key={`${experience.Company}-${index}`}>
             {/* <ParallaxSection > */}
             <motion.div
-              key={`${experience.Company}-${index}`}
               initial={{ opacity: 0, y: 50 }}
               animate={isInViews[index] ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.5 }}
@@ -114,7 +112,7 @@ export const Experience = () => {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                   {experience.Title.split('').map((letter, idx) => (
                     <motion.a
-                      key={idx}
+                      key={`${experience.Title}-${index+idx}`}
                       initial={{ opacity: 0 }}
                       animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
                       transition={{ duration: 0.25, delay: idx * 0.05 }}
@@ -153,7 +151,7 @@ export const Experience = () => {
 					<ul className="space-y-1 mt-2">
 						{experience.Description.map((item, idx) => (
 							<motion.li
-								key={idx}
+                key={`${experience.Description}-${index+idx}`}
 								initial={{ opacity: 0 }}
 								animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
 								transition={{ duration: 0.25, delay: idx * 0.05 }}

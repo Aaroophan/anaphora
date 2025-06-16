@@ -3,9 +3,10 @@ import { ExperienceSlider } from '../components/experience/ExperienceSlider';
 import { EducationTimeline } from '../components/education/EducationTimeline';
 import { mockProfile } from '../mock/mockData';
 import { portfolioData } from '../data/portfolio';
+import Setting from '../utils/Settings';
 
 export const Experience = () => {
-  const { Experiences, Education } = portfolioData.Experiences;
+  const { Experiences, Education } = Setting.getUserData().Experiences;
 
   return (
     <motion.div

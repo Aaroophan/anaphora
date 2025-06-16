@@ -66,6 +66,7 @@ export const TechnologyCategorySchema = z.tuple([
 ]);
 
 export const PortfolioSchema = z.object({
+  UserURL: z.string(),
   Main: z.object({
     Image: z.string(),
     Greeting: z.string(),

@@ -1,8 +1,7 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, Award, ExternalLink } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
-import { ParallaxSection } from './effects/ParallaxSection';
+import Setting from '../utils/Settings';
 
 export const Certificates = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,7 +56,7 @@ export const Certificates = () => {
           <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
             {"Certificates".split('').map((letter, idx) => (
               <motion.a
-                key={idx}
+                key={"CertificatesTitle"+idx}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.05, delay: idx * 0.05 }}
@@ -70,11 +69,10 @@ export const Certificates = () => {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioData.Certificates.map((certificate, index) => (
-            <div ref={refs[index]}>
+          {Setting.getUserData().Certificates.map((certificate, index) => (
+            <div ref={refs[index]} key={`${certificate.Name}-${index}`}>
             {/* <ParallaxSection> */}
             <motion.div
-              key={`${certificate.Name}-${index}`}
               initial={{ opacity: 0, y: 30 }}
                 animate={isInViews[index] ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}

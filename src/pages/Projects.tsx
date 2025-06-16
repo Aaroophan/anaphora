@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ProjectGrid } from '../components/projects/ProjectGrid';
 import { portfolioData } from '../data/portfolio';
 import { Project } from '../types/profile';
+import Setting from '../utils/Settings';
 
 export const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -10,7 +11,7 @@ export const Projects = () => {
 
   // Convert portfolio data projects to profile type projects
   useEffect(() => {
-    const convertedProjects = portfolioData.Projects.map(project => ({
+    const convertedProjects = Setting.getUserData().Projects.map(project => ({
       title: project.Name,
       description: project.Description,
       imageUrl: project.Image,

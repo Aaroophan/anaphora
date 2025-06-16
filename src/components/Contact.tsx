@@ -1,7 +1,7 @@
 import  { useState, FormEvent, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Send, Check, AlertCircle, Mail, Phone, MapPin } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
+import Setting from '../utils/Settings';
 
 export const Contact = () => {
 
@@ -90,8 +90,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Email</h4>
-                  <a href={`${portfolioData.Contact.Email}`} className="text-gray-900 dark:text-white hover:text-primary">
-                    {portfolioData.Contact.Email.split(":")[1]}
+                  <a href={`${Setting.getUserData().Contact.Email}`} className="text-gray-900 dark:text-white hover:text-primary">
+                    {Setting.getUserData().Contact.Email.split(":")[1]}
                   </a>
                 </div>
               </div>
@@ -102,8 +102,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Phone</h4>
-                  <a href={portfolioData.Contact.Phone} className="text-gray-900 dark:text-white hover:text-primary">
-                    {portfolioData.Contact.Phone.split("me/")[1]}
+                  <a href={Setting.getUserData().Contact.Phone} className="text-gray-900 dark:text-white hover:text-primary">
+                    {Setting.getUserData().Contact.Phone.split("me/")[1]}
                   </a>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Location</h4>
                   <p className="text-gray-900 dark:text-white">
-                    {portfolioData.Contact.Location}
+                    {Setting.getUserData().Contact.Location}
                   </p>
                 </div>
               </div>
@@ -126,7 +126,7 @@ export const Contact = () => {
                 Let's Connect
               </h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {portfolioData.Contact.Message}
+                {Setting.getUserData().Contact.Message}
               </p>
             </div>
           </motion.div>

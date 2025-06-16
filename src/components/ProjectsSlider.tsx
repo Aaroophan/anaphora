@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
 import { ParallaxSection } from './effects/ParallaxSection';
 import { useSwipeable } from 'react-swipeable';
+import Setting from '../utils/Settings';
 
 export const ProjectsSlider = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ export const ProjectsSlider = () => {
 
     const handlers = useSwipeable({
         onSwipedLeft: () =>
-            setCurrentIndex((prev) => Math.min(prev + 1, portfolioData.Projects.length - 1)),
+            setCurrentIndex((prev) => Math.min(prev + 1, Setting.getUserData().Projects.length - 1)),
         onSwipedRight: () =>
             setCurrentIndex((prev) => Math.max(prev - 1, 0)),
         trackMouse: true,
@@ -79,7 +79,7 @@ export const ProjectsSlider = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prev) =>
-                prev + 1 >= portfolioData.Projects.length ? 0 : prev + 1
+                prev + 1 >= Setting.getUserData().Projects.length ? 0 : prev + 1
             );
         }, 5000);
 
@@ -116,7 +116,7 @@ export const ProjectsSlider = () => {
                     <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
                         {"Projects".split('').map((letter, idx) => (
                             <motion.a
-                                key={idx}
+                                key={`${"ProjectsTitle"}-${idx}`}
                                 initial={{ opacity: 0 }}
                                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                 transition={{ duration: 0.05, delay: idx * 0.05 }}
@@ -136,12 +136,11 @@ export const ProjectsSlider = () => {
                         }}
                         className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth space-x-6 px-4 py-8"
                     >
-                        {portfolioData.Projects.map((project, index) => (
-                            <div ref={refs[index]}>
+                        {Setting.getUserData().Projects.map((project, index) => (
+                            <div ref={refs[index]} key={`${project.Name}-${index}`}>
                                 <ParallaxSection className='backdrop-blur-sm'>
                                     {/* <DynamicShadow> */}
                                     <motion.div
-                                        key={project.Name}
                                         initial={{ opacity: 0 }}
                                         animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.01 }}
@@ -163,7 +162,7 @@ export const ProjectsSlider = () => {
                                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                                                     {project.Name.split('').map((letter, idx) => (
                                                         <motion.a
-                                                            key={idx}
+                                                            key={`${project.Name}-${index+idx}`}
                                                             initial={{ opacity: 0 }}
                                                             animate={isInViews[index] ? { opacity: 1 } : { opacity: 0 }}
                                                             transition={{ duration: 0.25, delay: idx * 0.05 }}
@@ -190,9 +189,9 @@ export const ProjectsSlider = () => {
 
                                             <div className="mb-6">
                                                 <div className="flex flex-wrap gap-2">
-                                                    {project.Technologies.split(', ').map((tech) => (
+                                                    {project.Technologies.split(', ').map((tech, idx) => (
                                                         <span
-                                                            key={tech}
+                                                            key={`${project.Technologies}-${index+idx}`}
                                                             className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full"
                                                         >
                                                             {tech}
@@ -205,7 +204,7 @@ export const ProjectsSlider = () => {
                                                 <div className="flex gap-3">
                                                     {project.Links.map((link, linkIndex) => (
                                                         <a
-                                                            key={linkIndex}
+                                                            key={`${project.Links}-${linkIndex}`}
                                                             href={link.Href}
                                                             target="_blank"
                                                             rel="noopener noreferrer"

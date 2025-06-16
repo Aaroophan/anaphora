@@ -1,6 +1,6 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { portfolioData } from '../data/portfolio';
+import Setting from '../utils/Settings';
 
 export const Technologies = () => {
 	const ref1 = useRef<HTMLDivElement>(null);
@@ -48,7 +48,7 @@ export const Technologies = () => {
         </motion.div>
         
         <div className="space-y-12">
-          {portfolioData.Technologies.map(([category, skills], categoryIndex) => (
+          {Setting.getUserData().Technologies.map(([category, skills], categoryIndex) => (
             <div key={category}  ref={refs[categoryIndex]}>
             {/* <ParallaxSection marginEffect={0.5}> */}
               <motion.h3

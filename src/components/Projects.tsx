@@ -1,8 +1,8 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
 import { ParallaxSection } from './effects/ParallaxSection';
+import Setting from '../utils/Settings';
 
 export const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -100,7 +100,7 @@ export const Projects = () => {
         {/* <div className="flex gap-6 overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory max-w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-auto max-h-[calc(100vh-10px)]"> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioData.Projects.map((project, index) => (
+          {Setting.getUserData().Projects.map((project, index) => (
             <div ref={refs[index]}>
             <ParallaxSection className='backdrop-blur-sm'>
             {/* <DynamicShadow> */}

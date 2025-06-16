@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, ReactNode } from 'react';
 import { motion, useInView } from "framer-motion";
-import { portfolioData } from '../data/portfolio';
 import * as LucideIcons from 'lucide-react';
+import Setting from '../utils/Settings';
 
 export const Hero = () => {
 	const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
@@ -11,7 +11,7 @@ export const Hero = () => {
 	//const { width, height } = useWindowSize();
 	const ref = useRef<HTMLDivElement>(null);
 	const isInView = useInView(ref, { once: false });
-	const [scrolled, setScrolled] = useState(false);
+	// const [scrolled, setScrolled] = useState(false);
 
 	// useEffect(() => {
 	// 	const handleScroll = () => {
@@ -114,28 +114,28 @@ export const Hero = () => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % portfolioData.Main.Backgrounds.length);
+			setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % Setting.getUserData().Main.Backgrounds.length);
 		}, 20000);
 
 		return () => clearInterval(interval);
-	}, [portfolioData.Main.Backgrounds.length]);
+	}, [Setting.getUserData().Main.Backgrounds.length]);
 
 	useEffect(() => {
-		if (!portfolioData.Main.Tags) return;
+		if (!Setting.getUserData().Main.Tags) return;
 
 		const interval = setInterval(() => {
 			setIsVisible(false);
 			setTimeout(() => {
-				setCurrentTagIndex(prev => (prev + 1) % portfolioData.Main.Tags.length);
+				setCurrentTagIndex(prev => (prev + 1) % Setting.getUserData().Main.Tags.length);
 				setIsVisible(true);
 			}, 1000);
 		}, 4000);
 
 		return () => clearInterval(interval);
-	}, [portfolioData.Main.Tags.length]);
+	}, [Setting.getUserData().Main.Tags.length]);
 
 
-	const Socials = portfolioData.Main.Links.map((Social, index) => {
+	const Socials = Setting.getUserData().Main.Links.map((Social, index) => {
 		const IconComponent = LucideIcons[Social.Icon as keyof typeof LucideIcons];
 
 		if (!IconComponent) return null;
@@ -258,7 +258,7 @@ export const Hero = () => {
 						<IconComponent className={"rounded-md text-primary hover:text-secondary dark:hover:text-secondary transition-colors"} />
 					</div>
 					<div className="mt-4">
-						{portfolioData.Main.Greeting.split('').map((letter, idx) => (
+						{Setting.getUserData().Main.Greeting.split('').map((letter, idx) => (
 								<motion.a
 									key={idx}
 									initial={{ opacity: 0 }}
@@ -282,7 +282,7 @@ export const Hero = () => {
         scrolled ? 	'fixed inset-0 bg-cover bg-center blur-xs' : 
 					'fixed inset-0 bg-cover bg-center'}`}
         style={{
-          backgroundImage: `url(${portfolioData.Main.Backgrounds[currentBackgroundIndex]})`,
+          backgroundImage: `url(${Setting.getUserData().Main.Backgrounds[currentBackgroundIndex]})`,
 			opacity: scrolled ? currentBackgroundOpacity : 0.5,
         }}
       /> */}
@@ -299,8 +299,8 @@ export const Hero = () => {
 			className={`block lg:hidden w-64 h-64 sm:w-80 sm:h-80 rounded-xl ${roundedClasses.class1} ${roundedClasses.class2} ${roundedClasses.class3} overflow-hidden border-2 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-border border-transparent flex-shrink-0 transition-rounded duration-1000 ease-in-out shadow-lg`}
           >
             <img
-              src={portfolioData.Main.Images[currentBackgroundIndex]}
-              alt={portfolioData.Main.Name}
+              src={Setting.getUserData().Main.Images[currentBackgroundIndex]}
+              alt={Setting.getUserData().Main.Name}
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -312,9 +312,9 @@ export const Hero = () => {
               animate={isInView ? { opacity: 1} : { opacity: 0}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-				<p className="text-lg text-gray-600 dark:text-gray-400 mb-2 cursor-default">{TimelyGreeting()}</p>
+				<div className="text-lg text-gray-600 dark:text-gray-400 mb-2 cursor-default">{TimelyGreeting()}</div>
 					<h1 className="p-3 font-caveat text-5xl sm:text-5xl lg:text-7xl font-bold mb-4 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
-						{portfolioData.Main.Name.split('').map((letter, idx) => (
+						{Setting.getUserData().Main.Name.split('').map((letter, idx) => (
 							<motion.span
 								key={idx}
 								initial={{ opacity: 0, rotate: 0 }}
@@ -338,7 +338,7 @@ export const Hero = () => {
 					</h1>
             </motion.div>
 			<h2 className="font-mono font-bold text-center mb-6 cursor-default">
-				{portfolioData.Main.Tags[currentTagIndex].split("").map((letter, index) => (
+				{Setting.getUserData().Main.Tags[currentTagIndex].split("").map((letter, index) => (
 					<motion.span
 						key={index}
 						initial={{ opacity: 0 }}

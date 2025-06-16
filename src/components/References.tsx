@@ -1,8 +1,7 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { User, Briefcase, Phone, Mail } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
-import { ParallaxSection } from './effects/ParallaxSection';
+import Setting from '../utils/Settings';
 
 export const References = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,7 +55,7 @@ export const References = () => {
           <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
             {"References".split('').map((letter, idx) => (
               <motion.a
-                key={idx}
+                key={"ReferencesTitle"+idx}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.05, delay: idx * 0.05 }}
@@ -69,11 +68,10 @@ export const References = () => {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {portfolioData.References.map((reference, index) => (
-            <div ref={refs[index]}>
+          {Setting.getUserData().References.map((reference, index) => (
+            <div ref={refs[index]} key={`${reference.Name}-${index}`}>
             {/* <ParallaxSection className=' backdrop-blur-sm'> */}
             <motion.div
-              key={`${reference.Name}-${index}`}
               initial={{ opacity: 0, y: 30 }}
                 animate={isInViews[index] ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
