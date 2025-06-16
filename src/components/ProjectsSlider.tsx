@@ -152,7 +152,7 @@ export const ProjectsSlider = () => {
                                                 alt={project.Name}
                                                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                                                 onError={(e) => {
-                                                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0';
+                                                    (e.target as HTMLImageElement).src = Setting.getUserData().Main.Backgrounds[0];
                                                 }}
                                             />
                                         </div>
