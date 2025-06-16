@@ -276,18 +276,6 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center py-20 overflow-hidden ">
-      {/* Background Image with Overlay */}
-      {/* <div
-        className={`transition-opacity duration-1000 ease-in-out ${
-        scrolled ? 	'fixed inset-0 bg-cover bg-center blur-xs' : 
-					'fixed inset-0 bg-cover bg-center'}`}
-        style={{
-          backgroundImage: `url(${Setting.getUserData().Main.Backgrounds[currentBackgroundIndex]})`,
-			opacity: scrolled ? currentBackgroundOpacity : 0.5,
-        }}
-      /> */}
-      
-      {/* Content Container */}
 	<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-28">
           {/* Profile Image */}

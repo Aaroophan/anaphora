@@ -12,7 +12,6 @@ import { ProjectsSlider } from '../components/ProjectsSlider';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Setting from '../utils/Settings';
-import { Header } from '../components/layout/Header';
 
 export const Home = () => {
 	const [scrolled, setScrolled] = useState(false);
