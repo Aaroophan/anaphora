@@ -10,14 +10,12 @@ import { Contact } from '../components/Contact';
 import { Footer } from '../components/layout/Footer';
 import { ProjectsSlider } from '../components/ProjectsSlider'; 
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import Setting from '../utils/Settings';
 
 export const Home = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
 	const [currentBackgroundOpacity, setCurrentBackgroundOpacity] = useState(0.15);
-	const Location = useLocation();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -67,7 +65,7 @@ export const Home = () => {
 				className={`transition-opacity duration-1000 ease-in-out ${scrolled ? 'fixed inset-0 bg-cover bg-center blur-xs' : 'fixed inset-0 bg-cover bg-center'}`}
 				style={{
 					backgroundImage: `url(${Setting.getUserData().Main.Backgrounds[currentBackgroundIndex]})`,
-					opacity: Location.pathname.split("/")[1] == "" ? (scrolled ? currentBackgroundOpacity : 0.5) : 0.5,
+					opacity: scrolled ? currentBackgroundOpacity : 0.5,
 				}}
 			/>
 

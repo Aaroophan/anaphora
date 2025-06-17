@@ -5,6 +5,7 @@ import { Menu, X, Sun, Moon} from 'lucide-react';
 import { useThemeStore } from '../../store/themeStore';
 import * as LucideIcons from 'lucide-react';
 import Setting from '../../utils/Settings';
+import { Login } from '../Login/Login';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,11 +88,13 @@ export const Header = () => {
 		[`Experience`, LucideIcons.Building, "Experience"],
 		[`Education`, LucideIcons.GraduationCap, "Education"],
 		[`Certificates`, LucideIcons.BadgeCheck, "Certificates"],
-		[`Contact`, LucideIcons.Contact2, "Contact"]
+		[`Contact`, LucideIcons.Contact2, "Contact"],
+		[`Login`, LucideIcons.User, "Get your own portfoilio!"]
 	];
 
 	const NavigationLinks = NavLinksDetails.map((NavLink, index) => {
 		const IconComponent = NavLink[1]
+		const Splitter = NavLink[2] == `Get your own portfoilio!` ? ` ` : ``
 
 		return(
 			<Link to={NavLink[0]} key={"NavigationLink-" + index}>
@@ -119,18 +122,18 @@ export const Header = () => {
 						repeatType: "mirror"
 					}
 				}}
-				className="flex items-center px-1 py-2 rounded-md text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors hover:ring-1 hover:ring-slate-700 dark:hover:ring-slate-300"
+					className={`${NavLink[2] == `Get your own portfoilio!` ? `text-xs mx-5 bg-blue-600/50 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary px-1 py-2` : `text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary px-1 py-1`} flex items-center rounded-md transition-colors hover:ring-1 hover:ring-slate-700 dark:hover:ring-slate-300`}
 
 				onClick={() => setIsMenuOpen(false)}
 			>
 				<IconComponent className="w-4 h-4 mx-1" />
-				{NavLink[2].split("").map((letter, idx) => (
+				{NavLink[2].split(Splitter).map((letter, idx) => (
 					<motion.span
 						key={"NavLink-" + idx}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.1, delay: idx * 0.1 }}
-						className="rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+						className={`${NavLink[2] == `Get your own portfoilio!` ? `text-xs mx-1 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary` : `text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary`} rounded-md transition-colors`}
 					>
 						{letter}
 					</motion.span>
@@ -223,9 +226,9 @@ export const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-4">
-            <div className="hidden sm:flex space-x-2">
+            {/* <div className="hidden sm:flex space-x-2">
 				{HeaderSocials}
-            </div>
+            </div> */}
             
             <button
               onClick={toggleDarkMode}
@@ -284,11 +287,11 @@ export const Header = () => {
           <div className="px-4 pt-2 pb-3 space-y-1">
             {NavigationLinks}
             
-            <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
+            {/* <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
               <div className="flex justify-center space-x-6 py-4">
 				{HeaderSocials}
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       )}

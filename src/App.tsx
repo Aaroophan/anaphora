@@ -16,6 +16,9 @@ import { NotFound } from './pages/NotFound';
 import { useLocation } from 'react-router-dom';
 import Setting from './utils/Settings';
 import { portfolioData } from './data/portfolio';
+import { Login } from './components/Login/Login';
+import { Register } from './components/Login/Register';
+import { EditProfile } from './components/Login/Edit';
 
 function Router() {
 	const { darkMode } = useThemeStore();
@@ -58,7 +61,10 @@ function Router() {
 				<Route path="Certificates" element={<Certificates />} />
 				<Route path="References" element={<References />} />
 				<Route path="Contact" element={<Contact />} />
+				<Route path="Login" element={<Login />} />
+				<Route path="EditProfile" element={<EditProfile />} />
 			</Route>
+			<Route path="Register" element={<Register />} />
           </Routes>
       </div>
     </>

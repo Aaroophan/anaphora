@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, ReactNode } from 'react';
 import { motion, useInView } from "framer-motion";
 import * as LucideIcons from 'lucide-react';
 import Setting from '../utils/Settings';
+import GenNumber from '../utils/GenNumber';
 
 export const Hero = () => {
 	const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
@@ -347,6 +348,15 @@ export const Hero = () => {
             >
 				{Socials}
             </motion.div>
+
+			{/* <motion.div
+				initial={{ opacity: 0, y: 20 }}
+				animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+				transition={{ duration: 0.5, delay: 0.6 }}
+				className="flex flex-wrap justify-center lg:justify-center gap-3 lg:gap-10"
+			>
+				{GenNumber(Setting.getUserData().Projects.length, "g:text-xl bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent lg:m-1 hover:text-primary dark:hover:text-primary transition-colors", 5)}
+			</motion.div> */}
           </div>
         </div>
       </div>
