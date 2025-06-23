@@ -51,6 +51,15 @@ function Router() {
           <Routes>
 			<Route path={`*`} element={<><Header /><NotFound /></>} />
 			<Route path="/" element={<Navigate to="/Aaroophan" replace />} />
+			<Route path="/About" element={<Navigate to="/Aaroophan/About" replace />} />
+			<Route path="/Technologies" element={<Navigate to="/Aaroophan/Technologies" replace />} />
+			<Route path="/Projects" element={<Navigate to="/Aaroophan/Projects" replace />} />
+			<Route path="/Experience" element={<Navigate to="/Aaroophan/Experience" replace />} />
+			<Route path="/Education" element={<Navigate to="/Aaroophan/Education" replace />} />
+			<Route path="/Certificates" element={<Navigate to="/Aaroophan/Certificates" replace />} />
+			<Route path="/References" element={<Navigate to="/Aaroophan/References" replace />} />
+			<Route path="/Contact" element={<Navigate to="/Aaroophan/Contact" replace />} />
+			<Route path="/Login" element={<Navigate to="/Aaroophan/Login" replace />} />
 			<Route path="/:username" element={<UserRouteWrapper />}>
 				<Route index element={<Home />} />
 				<Route path="About" element={<About />} />

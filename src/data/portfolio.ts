@@ -10,7 +10,7 @@ export const portfolioData: Record<string, Portfolio> = {
       "Tags": [
         "Animation Enthusiast",
         "Full Stack Developer",
-        "Associate Database Developer",
+        "Associate Software Engineer",
         "Agile Team Player",
         "React, Node, C#, .NET",
         "SQL, PostgreSQL, MongoDB",
@@ -74,7 +74,7 @@ export const portfolioData: Record<string, Portfolio> = {
       ]
     },
     "About": {
-      "Description": "Hello,\n\nI am Aaroophan Varatharajan, a Computer Science and Software Engineering graduate from SLIIT City Uni, affiliated with the University of Bedfordshire, UK, with a Second-Class Upper degree and a Higher Diploma in IT. I was recognized on the Dean's List. I am working as an Associate Database Developer at M Data Zone (Colombo, Sri Lanka) after being promoted from my previous role as Junior Database Developer since September 2024. I have expertise in software development because, my interest is in it, and I have completed several projects, with a strong command of SQL, React.js, Node.js, JavaScript, TypeScript, C#, .NET, Blazor, Python, Machine Learning, Java, PHP, Flask, Selenium, HTML & CSS and Open AI API, along with a good command of English with IELTS - 7.0. My hands on experience at M Data Zone and Alliance Finance Company has made me proficient in C#, .NET, React, Node and databases, including MySQL, PostgreSQL, T-SQL, and MongoDB.\n\nConnect with me to learn more about how my skills can contribute to your team.\n\nBest Regards,\nAaroophan"
+      "Description": "Hello,\n\nI’m Aaroophan Varatharajan, currently working as an Associate Software Engineer at M Data Zone in Colombo, Sri Lanka. I was promoted to this role after serving as a Junior Software Engineer since September 2024. I hold a Second-Class Upper degree in Computer Science and Software Engineering from SLIIT City Uni, affiliated with the University of Bedfordshire, UK, and have also earned a Higher Diploma in IT. I was proud to be recognized on the Dean's List for academic excellence.\n\nAt M Data Zone and during my internship at Alliance Finance Company, I’ve gained practical experience in full-stack software development. I specialize in .NET (C#), React.js, Node.js, and database technologies like MySQL, PostgreSQL, T-SQL, and MongoDB. My skill set also includes JavaScript, TypeScript, Blazor, Python, Java, PHP, Flask, HTML/CSS, Selenium, Machine Learning, and the OpenAI API. I’m also a fluent English speaker with an IELTS score of 7.0.\n\nI’m passionate about building scalable software solutions and continuously improving my technical and problem-solving abilities.\n\nLet’s connect to explore how I can contribute to your team.\n\nBest Regards,\nAaroophan"
     },
     "Technologies": [
       [
@@ -506,44 +506,46 @@ export const portfolioData: Record<string, Portfolio> = {
     "Experiences": [
       {
         "Image": "/images/MDZ_logo-min.JPG",
-        "Title": "Associate Database Developer",
+        "Title": "Associate Software Engineer",
         "Company": "M Data Zone (PVT) LTD",
         "JobType": "Full-time",
         "Location": "Colombo, Western Province, Sri Lanka",
         "LocationType": "On-site",
         "Date": "Mar 2025 - Present",
         "Description": [
-          "Wrote efficient SQL queries, stored procedures, triggers, views & functions.",
-          "Troubleshot & resolved database-related issues promptly.",
-          "Documented database designs and processes for 2+ projects.",
-          "Defined frontend requirements and implemented changes using Blazor.",
-          "Enhanced backend operations & implemented functional requirements in .NET.",
-          "Managed Zendesk to improve customer support, reducing response time by 35%.",
-          "Performed manual testing across 6+ projects, reducing bugs by 30%.",
-          "Built and ran 500+ Selenium test scripts to automate regression testing.",
+          "Built a multi-channel marketing platform using Next.js and .NET Core in a 2-person team.",
+          "Delivered 5+ backend enhancements and functional features in .NET.",
           "Developed a .NET app to execute test automation, cutting manual effort by 70%.",
-          "Worked as integral part of teams & clients based in Canada, US and Sri Lanka."
+          "Built and ran 600+ Selenium test scripts to automate regression testing within a month.",
+          "Performed manual testing across 6+ projects, reducing bugs by 30%.",
+          "Wrote 100+ efficient SQL queries, 20+ stored procedures, triggers, views & functions.",
+          "Troubleshot & resolved database-related issues promptly, reducing downtime by 20%.",
+          "Documented software and database designs for 3+ projects.",
+          "Managed 20+ weekly Zendesk tickets, improving response time and support by 35%.",
+          "Trained 2 new employees, reducing their onboarding time by 40% within a month.",
+          "Worked as integral part of Race Data based in Canada, US and Sri Lanka.",
         ]
       },
       {
         "Image": "/images/MDZ_logo-min.JPG",
-        "Title": "Junior Database Developer",
+        "Title": "Junior Software Engineer",
         "Company": "M Data Zone (PVT) LTD",
         "JobType": "Full-time",
         "Location": "Colombo, Western Province, Sri Lanka",
         "LocationType": "On-site",
         "Date": "Sept 2024 - Mar 2025",
         "Description": [
-          "Wrote efficient SQL queries, stored procedures, triggers, views & functions.",
-          "Troubleshot & resolved database-related issues promptly.",
-          "Documented database designs and processes for 2+ projects.",
-          "Defined frontend requirements and implemented changes using Blazor.",
-          "Enhanced backend operations & implemented functional requirements in .NET.",
-          "Managed Zendesk to improve customer support, reducing response time by 35%.",
-          "Performed manual testing across 6+ projects, reducing bugs by 30%.",
-          "Built and ran 500+ Selenium test scripts to automate regression testing.",
+          "Built a multi-channel marketing platform using Next.js and .NET Core in a 2-person team.",
+          "Delivered 5+ backend enhancements and functional features in .NET.",
           "Developed a .NET app to execute test automation, cutting manual effort by 70%.",
-          "Worked as integral part of teams & clients based in Canada, US and Sri Lanka."
+          "Built and ran 600+ Selenium test scripts to automate regression testing within a month.",
+          "Performed manual testing across 6+ projects, reducing bugs by 30%.",
+          "Wrote 100+ efficient SQL queries, 20+ stored procedures, triggers, views & functions.",
+          "Troubleshot & resolved database-related issues promptly, reducing downtime by 20%.",
+          "Documented software and database designs for 3+ projects.",
+          "Managed 20+ weekly Zendesk tickets, improving response time and support by 35%.",
+          "Trained 2 new employees, reducing their onboarding time by 40% within a month.",
+          "Worked as integral part of Race Data based in Canada, US and Sri Lanka.",
         ]
       },
       {
@@ -561,7 +563,8 @@ export const portfolioData: Record<string, Portfolio> = {
           "Created 500+ test cases and detailed documentation for QA processes.",
           "Identified and reported 30+ bugs in core banking workflows during testing cycles.",
           "Supported implementation of security measures, including sanction list validation.",
-          "Conducted UAT training sessions for 200+ users & provided ongoing user support."
+          "Conducted UAT training sessions for 200+ users & provided ongoing user support.",
+          "Trained 2 new interns, reducing their onboarding time by 80%."
         ]
       }
     ],
