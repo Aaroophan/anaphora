@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, ReactNode } from 'react';
+import React from 'react';
 import { motion, useInView } from "framer-motion";
 import * as LucideIcons from 'lucide-react';
 import Setting from '../utils/Settings';
@@ -301,28 +302,33 @@ export const Hero = () => {
               animate={isInView ? { opacity: 1} : { opacity: 0}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-				<div className="text-lg text-gray-600 dark:text-gray-400 mb-2 cursor-default">{TimelyGreeting()}</div>
-					<h1 className="pb-4 font-oswald text-5xl sm:text-5xl lg:text-9xl font-bold mb-4 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
-						{Setting.getUserData().Main.Name.split('').map((letter, idx) => (
-							<motion.span
-								key={idx}
-								initial={{ opacity: 0, rotate: 0 }}
-								animate={isInView ? { opacity: 1, rotate: [-5, 5] } : { opacity: 0 }}
-								transition={{ duration: 0.1, delay: idx * 0.05 }}
-								whileHover={{
-									scale: [1, 1.1, 0.9, 1.05, 0.95, 1],
-									rotate: [0, 3, -2, 1.5, -1, 0],
-									transition: { duration: 1, ease: "easeInOut" }
-								}}
-								whileTap={{
-									scale: [1, 1.1, 0.9, 1.05, 0.95, 1],
-									rotate: [0, 3, -2, 1.5, -1, 0],
-									transition: { duration: 1, ease: "easeInOut" }
-								}}
-								className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
-							>
-								{letter}
-							</motion.span>
+				<div className="text-lg text-gray-600 dark:text-gray-400 mb-2 cursor-default lg:text-left">{TimelyGreeting()}</div>
+					<h1 className="pb-4 font-oswald text-7xl sm:text-6xl lg:text-9xl font-bold mb-4 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-blue-200 dark:via-blue-100 dark:to-blue-200 bg-clip-text text-transparent cursor-default">
+						{Setting.getUserData().Main.Name.split(' ').map((SplitName, ind) => (
+							<React.Fragment key={`name-part-${ind}`}>
+								{SplitName.split('').map((letter, idx) => (
+									<motion.span
+										key={`letter-${ind}-${idx}-${letter}`}
+										initial={{ opacity: 0, rotate: 0 }}
+										animate={isInView ? { opacity: 1, rotate: [-5, 5] } : { opacity: 0 }}
+										transition={{ duration: 0.1, delay: idx * 0.05 }}
+										whileHover={{
+											scale: [1, 1.1, 0.9, 1.05, 0.95, 1],
+											rotate: [0, 3, -2, 1.5, -1, 0],
+											transition: { duration: 1, ease: "easeInOut" }
+										}}
+										whileTap={{
+											scale: [1, 1.1, 0.9, 1.05, 0.95, 1],
+											rotate: [0, 3, -2, 1.5, -1, 0],
+											transition: { duration: 1, ease: "easeInOut" }
+										}}
+										className="rounded-md hover:text-primary dark:hover:text-primary transition-colors"
+									>
+										{letter}
+									</motion.span>
+								))}
+							<br/>
+							</React.Fragment>
 						))}
 					</h1>
             </motion.div>
