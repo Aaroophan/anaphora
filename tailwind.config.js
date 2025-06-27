@@ -8,6 +8,7 @@ export default {
         comic: ['"Comic Sans MS"', 'cursive'],
         mono: ['JetBrains Mono', 'monospace'],
         caveat: ['Caveat', 'cursive'],
+        oswald: ['Oswald', 'sans-serif'],
       },
       colors: {
         primary: 'var(--primary-color)',

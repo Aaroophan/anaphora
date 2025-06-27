@@ -277,7 +277,7 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center py-20 overflow-hidden ">
-	<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
+	<div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-28">
           {/* Profile Image */}
 		  <div className="hidden lg:block w-64 h-64 sm:w-80 sm:h-80 "></div>
@@ -295,14 +295,14 @@ export const Hero = () => {
           </motion.div>
           
           {/* Text Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1} : { opacity: 0}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
 				<div className="text-lg text-gray-600 dark:text-gray-400 mb-2 cursor-default">{TimelyGreeting()}</div>
-					<h1 className="p-3 font-caveat text-5xl sm:text-5xl lg:text-7xl font-bold mb-4 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
+					<h1 className="pb-4 font-oswald text-5xl sm:text-5xl lg:text-9xl font-bold mb-4 bg-gradient-to-br from-slate-400 via-slate-700 to-slate-200 dark:from-fuchsia-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent cursor-default">
 						{Setting.getUserData().Main.Name.split('').map((letter, idx) => (
 							<motion.span
 								key={idx}

@@ -258,6 +258,25 @@ export const portfolioData: Record<string, Portfolio> = {
     ],
     "Projects": [
       {
+        "Image": "/images/SkrinePlae-min.JPG",
+        "Name": "SkrinePlae",
+        "Links": [
+          {
+            "Name": "Link",
+            "Icon": "link",
+            "Href": "https://skrineplae.vercel.app"
+          },
+          {
+            "Name": "GitHub",
+            "Icon": "github",
+            "Href": "https://github.com/Aaroophan/SkrinePlae"
+          }
+        ],
+        "Date": "June 2025",
+        "Description": "Built a modern, web-based screenwriting application with industry-standard formatting and a rich, interactive editor. Enabled users to create, edit, and manage multiple screenplays with persistent local storage, keyboard navigation, responsive design, and customizable theming. Focused on usability, professional formatting, and a seamless experience across devices—all without a backend.",
+        "Technologies": "React, Next.js, TypeScript, Tailwind CSS, Radix UI, Lucide, localStorage, GitHub"
+      },
+      {
         "Image": "/images/anaphora-min.JPG",
         "Name": "anaphora",
         "Links": [
