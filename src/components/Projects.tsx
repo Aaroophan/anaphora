@@ -1,7 +1,8 @@
-import  { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
-import { ParallaxSection } from './effects/ParallaxSection';
+import { LazySection } from './ui/LazySection';
+import { LazyImage } from './ui/LazyImage';
 import Setting from '../utils/Settings';
 import { LazySection } from './ui/LazySection';
 import { LazyImage } from './ui/LazyImage';
@@ -9,59 +10,6 @@ import { LazyImage } from './ui/LazyImage';
 export const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false });
-
-  const ref1 = useRef<HTMLDivElement>(null);
-  const ref2 = useRef<HTMLDivElement>(null);
-  const ref3 = useRef<HTMLDivElement>(null);
-  const ref4 = useRef<HTMLDivElement>(null);
-  const ref5 = useRef<HTMLDivElement>(null);
-  const ref6 = useRef<HTMLDivElement>(null);
-  const ref7 = useRef<HTMLDivElement>(null);
-  const ref8 = useRef<HTMLDivElement>(null);
-  const ref9 = useRef<HTMLDivElement>(null);
-  const ref10 = useRef<HTMLDivElement>(null);
-  const ref11 = useRef<HTMLDivElement>(null);
-  const ref12 = useRef<HTMLDivElement>(null);
-  const ref13 = useRef<HTMLDivElement>(null);
-  const ref14 = useRef<HTMLDivElement>(null);
-  const ref15 = useRef<HTMLDivElement>(null);
-  const ref16 = useRef<HTMLDivElement>(null);
-
-  const isInView1 = useInView(ref1, { once: false });
-  const isInView2 = useInView(ref2, { once: false });
-  const isInView3 = useInView(ref3, { once: false });
-  const isInView4 = useInView(ref4, { once: false });
-  const isInView5 = useInView(ref5, { once: false });
-  const isInView6 = useInView(ref6, { once: false });
-  const isInView7 = useInView(ref7, { once: false });
-  const isInView8 = useInView(ref8, { once: false });
-  const isInView9 = useInView(ref9, { once: false });
-  const isInView10 = useInView(ref10, { once: false });
-  const isInView11 = useInView(ref11, { once: false });
-  const isInView12 = useInView(ref12, { once: false });
-  const isInView13 = useInView(ref13, { once: false });
-  const isInView14 = useInView(ref14, { once: false });
-  const isInView15 = useInView(ref15, { once: false });
-  const isInView16 = useInView(ref16, { once: false });
-
-  const refs = [ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, ref10, ref11, ref12, ref13, ref14, ref15, ref16];
-  const isInViews = [isInView1, isInView2, isInView3, isInView4, isInView5, isInView6, isInView7, isInView8, isInView9, isInView10, isInView11, isInView12, isInView13, isInView14, isInView15, isInView16];
-
-  // const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const el = scrollContainerRef.current;
-  //   if (!el) return;
-
-  //   const handleWheel = (e: WheelEvent) => {
-  //     if (e.deltaY === 0) return;
-  //     e.preventDefault();
-  //     el.scrollBy({ left: e.deltaY, behavior: 'smooth' });
-  //   };
-
-  //   el.addEventListener('wheel', handleWheel, { passive: false });
-  //   return () => el.removeEventListener('wheel', handleWheel);
-  // }, []);
 
   const getLinkIcon = (icon: string) => {
     switch (icon.toLowerCase()) {
@@ -98,20 +46,10 @@ export const Projects = () => {
             ))}
           </h2>
         </motion.div>
-        {/* ref={scrollContainerRef}  */}
-        {/* <div className="flex gap-6 overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory max-w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-auto max-h-[calc(100vh-10px)]"> */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Setting.getUserData().Projects.map((project, index) => (
             <div ref={refs[index]}>
-            <LazySection
-              key={`${project.Name}-${index}`}
-              threshold={0.1}
-              delay={index * 100}
-              fallback={
-                <div className="w-[350px] md:w-[350px] lg:w-[380px] h-96 bg-slate-200/50 dark:bg-slate-700/50 animate-pulse rounded-xl" />
-              }
-            >
             <ParallaxSection className='backdrop-blur-sm'>
             {/* <DynamicShadow> */}
             <motion.div
@@ -122,21 +60,14 @@ export const Projects = () => {
               className="w-[350px] md:w-[350px] lg:w-[380px] shrink-0 snap-start overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm shadow-lg hover:shadow-xl"
             >
               <div className="h-48 overflow-hidden">
-                <LazyImage
-                        src={project.Image}
-                        alt={project.Name}
-                        className="w-full h-full transition-transform duration-300 hover:scale-105"
-                        fallbackSrc={Setting.getUserData().Main.Backgrounds[0]}
-                        onError={() => console.log(`Failed to load image for ${project.Name}`)}
-                />
-                {/* <img 
+                <img 
                   src={project.Image} 
                   alt={project.Name} 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = Setting.getUserData().Main.Backgrounds[0];
                   }}
-                /> */}
+                />
               </div>
               
               <div className="p-6">
@@ -203,7 +134,6 @@ export const Projects = () => {
             </motion.div>
               {/* </DynamicShadow> */}
               </ParallaxSection>
-            </LazySection>
             </div>
           ))}
         </div>
@@ -211,4 +141,3 @@ export const Projects = () => {
     </section>
   );
 };
- 
