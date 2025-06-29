@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { AvatarScene } from './avatar/AvatarScene';
+import { LazySection } from './ui/LazySection';
 import Setting from '../utils/Settings';
 
 export const About = () => {
@@ -35,13 +36,20 @@ export const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Avatar Section */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: -50 }}
-              animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.8, x: -50 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <LazySection
+              threshold={0.3}
+              delay={200}
               className="flex-shrink-0 lg:w-1/3 flex justify-center"
+              fallback={
+                <div className="w-72 h-72 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+              }
             >
-              <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, x: -50 }}
+                animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.8, x: -50 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative"
+              >
                 {/* Decorative background elements */}
                 <motion.div
                   className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-xl"
@@ -89,65 +97,81 @@ export const About = () => {
                     delay: 1
                   }}
                 />
-              </div>
-            </motion.div>
+              </motion.div>
+            </LazySection>
 
             {/* Content Section */}
             <div className="lg:w-2/3 space-y-6">
               {paragraphs.map((paragraph, index) => (
-                <motion.div
+                <LazySection
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  threshold={0.2}
+                  delay={index * 150}
                   className="relative"
+                  fallback={
+                    <div className="h-20 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg" />
+                  }
                 >
-                  {/* Decorative line for first paragraph */}
-                  {index === 0 && (
-                    <motion.div
-                      className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-secondary rounded-full"
-                      initial={{ scaleY: 0 }}
-                      animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                    />
-                  )}
-                  
-                  <p className="leading-relaxed whitespace-pre-line bg-gradient-to-br from-slate-500 via-slate-700 to-slate-500 dark:from-sky-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent text-lg">
-                    {paragraph}
-                  </p>
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  >
+                    {/* Decorative line for first paragraph */}
+                    {index === 0 && (
+                      <motion.div
+                        className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-secondary rounded-full"
+                        initial={{ scaleY: 0 }}
+                        animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                      />
+                    )}
+                    
+                    <p className="leading-relaxed whitespace-pre-line bg-gradient-to-br from-slate-500 via-slate-700 to-slate-500 dark:from-sky-200 dark:via-slate-300 dark:to-blue-400 bg-clip-text text-transparent text-lg">
+                      {paragraph}
+                    </p>
+                  </motion.div>
+                </LazySection>
               ))}
 
               {/* Skills highlight section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="mt-8 p-6 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm border border-primary/20"
+              <LazySection
+                threshold={0.2}
+                delay={800}
+                fallback={
+                  <div className="h-40 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-xl" />
+                }
               >
-                <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Quick Highlights
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { label: "Experience", value: "5+ Years" },
-                    { label: "Projects", value: `${Setting.getUserData().Projects.length}+` },
-                    { label: "Technologies", value: `${Setting.getUserData().Technologies.length}+` },
-                    { label: "Certifications", value: `${Setting.getUserData().Certificates.length}+` }
-                  ].map((item, idx) => (
-                    <motion.div
-                      key={item.label}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.3, delay: 1 + idx * 0.1 }}
-                      className="text-center p-3 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 transition-all duration-300"
-                    >
-                      <div className="text-2xl font-bold text-primary">{item.value}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{item.label}</div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="mt-8 p-6 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm border border-primary/20"
+                >
+                  <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Quick Highlights
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      { label: "Experience", value: "5+ Years" },
+                      { label: "Projects", value: `${Setting.getUserData().Projects.length}+` },
+                      { label: "Technologies", value: `${Setting.getUserData().Technologies.length}+` },
+                      { label: "Certifications", value: `${Setting.getUserData().Certificates.length}+` }
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.3, delay: 1 + idx * 0.1 }}
+                        className="text-center p-3 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 transition-all duration-300"
+                      >
+                        <div className="text-2xl font-bold text-primary">{item.value}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400">{item.label}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </LazySection>
             </div>
           </div>
         </div>
