@@ -7,6 +7,7 @@ interface AvatarGeneratorProps {
   className?: string;
 }
 
+// Fallback SVG avatar for cases where 3D is not needed
 export const AvatarGenerator = ({ username, size = 100, className = '' }: AvatarGeneratorProps) => {
   const { primaryColor } = useThemeStore();
 
