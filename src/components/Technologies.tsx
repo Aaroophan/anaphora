@@ -1,6 +1,7 @@
 import  { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Setting from '../utils/Settings';
+import { LazySection } from './ui/LazySection';
 
 export const Technologies = () => {
 	const ref1 = useRef<HTMLDivElement>(null);
@@ -49,7 +50,22 @@ export const Technologies = () => {
         
         <div className="space-y-12">
           {Setting.getUserData().Technologies.map(([category, skills], categoryIndex) => (
-            <div key={category}  ref={refs[categoryIndex]}>
+            <div key={category} ref={refs[categoryIndex]}>
+            <LazySection
+              key={category}
+              threshold={0.05}
+              delay={categoryIndex * 150}
+              fallback={
+                <div className="space-y-4">
+                  <div className="h-8 bg-slate-200 dark:bg-slate-700 animate-pulse rounded-lg w-1/3" />
+                  <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-4">
+                    {Array.from({ length: 8 }).map((_, i) => (
+                      <div key={i} className="h-24 bg-gray-200/50 dark:bg-gray-700/50 animate-pulse rounded-lg" />
+                    ))}
+                  </div>
+                </div>
+              }
+            >
             {/* <ParallaxSection marginEffect={0.5}> */}
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
@@ -72,6 +88,14 @@ export const Technologies = () => {
               
               <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-4 ">
                 {skills.map(([icon, name], skillIndex) => (
+                  <LazySection
+                    key={`${name}-${skillIndex}`}
+                    threshold={0.01}
+                    delay={skillIndex * 30}
+                    fallback={
+                      <div className="h-24 bg-slate-200/50 dark:bg-slate-700/50 animate-pulse rounded-lg" />
+                    }
+                  >
                   <motion.div
                     key={`${name}-${skillIndex}`}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -96,10 +120,12 @@ export const Technologies = () => {
                     </div>
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{name}</span>
                   </motion.div>
+                  </LazySection>
                 ))}
               </div>
               
               {/* </ParallaxSection> */}
+              </LazySection>
             </div>
           ))}
         </div>

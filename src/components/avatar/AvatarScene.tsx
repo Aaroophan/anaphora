@@ -1,109 +1,88 @@
-import { useMemo } from 'react';
-import { useThemeStore } from '../../store/themeStore';
+import React, { useRef, useEffect } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-interface AvatarGeneratorProps {
-  username: string;
-  size?: number;
-  className?: string;
-}
+export const AvatarScene = () => {
+  let mountRef = useRef<HTMLDivElement>(null);
 
-export const AvatarGenerator = ({ username, size = 100, className = '' }: AvatarGeneratorProps) => {
-  const { primaryColor } = useThemeStore();
+  useEffect(() => {
+    let container = mountRef.current;
+    if (!container) return;
 
-  // Generate deterministic SVG based on username
-  const svgContent = useMemo(() => {
-    // Hash the username for deterministic results
-    let hash = 0;
-    for (let i = 0; i < username.length; i++) {
-      hash = ((hash << 5) - hash) + username.charCodeAt(i);
-      hash |= 0;
-    }
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+    camera.position.set(15, 5, 20);
+    camera.lookAt(scene.position);
 
-    // Create a deterministic array of colors based on hash
-    const getColor = (index: number) => {
-      const hue = (hash + index * 50) % 360;
-      return `hsl(${hue}, 70%, 60%)`;
+    let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+    renderer.setSize(container.clientWidth, container.clientWidth);
+    renderer.setClearColor(0x000000, 0);
+
+    container.appendChild(renderer.domElement);
+
+    let controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = false;
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.1;
+    controls.screenSpacePanning = false;
+
+    let ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+    scene.add(ambientLight);
+    let directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(5, 1, 0);
+    scene.add(directionalLight);
+    controls.update();
+
+    // Create a simple geometric shape instead of loading external model
+    let geometry = new THREE.BoxGeometry(2, 2, 2);
+    let material = new THREE.MeshPhongMaterial({
+      color: 0x3B82F6,
+      transparent: true,
+      opacity: 0.8
+    });
+    let cube = new THREE.Mesh(geometry, material);
+    cube.name = "ThreeDeeObj";
+    cube.position.set(0, 0, 0);
+    scene.add(cube);
+
+    let animate = function () {
+      requestAnimationFrame(animate);
+
+      let object = scene.getObjectByName('ThreeDeeObj');
+      if (object) {
+        object.rotation.y += 0.01;
+      }
+
+      // Rotate the ambientLight light around the scene
+      ambientLight.position.x = 50 * Math.sin(Date.now() * 0.001);
+      ambientLight.position.z = 50 * Math.cos(Date.now() * 0.001);
+      ambientLight.position.y = 50 * Math.cos(Date.now() * 0.001);
+      ambientLight.lookAt(0, 0, 0); // Keep the light pointing at the center
+
+      controls.update();
+
+      renderer.render(scene, camera);
     };
 
-    // Create background grid
-    const cellSize = 20;
-    const numCells = 5;
-    const cells: JSX.Element[] = [];
+    animate();
 
-    for (let y = 0; y < numCells; y++) {
-      for (let x = 0; x < numCells; x++) {
-        // Make it symmetrical
-        const shouldFill = (x < Math.floor(numCells / 2) &&
-          Math.abs(hash + x * y) % 2 === 0);
+    window.addEventListener('resize', function () {
+      if (!container) return;
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }, false);
 
-        if (shouldFill) {
-          cells.push(
-            <rect
-              key={`${x}-${y}`}
-              x={x * cellSize}
-              y={y * cellSize}
-              width={cellSize}
-              height={cellSize}
-              fill={getColor(x + y)}
-            />
-          );
-
-          // Add mirrored cell for symmetry
-          if (x !== numCells - 1 - x) {
-            cells.push(
-              <rect
-                key={`${numCells - 1 - x}-${y}`}
-                x={(numCells - 1 - x) * cellSize}
-                y={y * cellSize}
-                width={cellSize}
-                height={cellSize}
-                fill={getColor(x + y)}
-              />
-            );
-          }
-        }
-      }
-    }
-
-    // SVG container
-    return (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox={`0 0 ${numCells * cellSize} ${numCells * cellSize}`}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Background */}
-        <rect
-          width={numCells * cellSize}
-          height={numCells * cellSize}
-          fill={primaryColor || '#3B82F6'}
-          opacity="0.2"
-        />
-
-        {/* Cells */}
-        {cells}
-
-        {/* Border */}
-        <rect
-          width={numCells * cellSize}
-          height={numCells * cellSize}
-          fill="none"
-          stroke={primaryColor || '#3B82F6'}
-          strokeWidth="2"
-          opacity="0.5"
-        />
-      </svg>
-    );
-  }, [username, primaryColor]);
+    return () => {
+      controls.dispose();
+      renderer.dispose();
+    };
+  }, []);
 
   return (
-    <div
-      className={`rounded-full overflow-hidden shadow-md ${className}`}
-      style={{ width: size, height: size }}
-    >
-      {svgContent}
+    <div className="bg-transparent rounded-4">
+      <div className="zoom" ref={mountRef}></div>
     </div>
   );
 };
- 

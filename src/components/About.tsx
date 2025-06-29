@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Setting from '../utils/Settings';
+import { LazySection } from './ui/LazySection';
 
 export const About = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -34,6 +35,15 @@ export const About = () => {
         
         <div className="max-w-4xl mx-auto ">
           {paragraphs.map((paragraph, index) => (
+            <LazySection
+              key={index}
+              threshold={0.2}
+              delay={index * 150}
+              className="relative"
+              fallback={
+                <div className="h-20 bg-slate-200/50 dark:bg-slate-700/50 animate-pulse rounded-lg" />
+              }
+            >
             <motion.p
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -44,6 +54,7 @@ export const About = () => {
             >
               {paragraph}
             </motion.p>
+            </LazySection>
           ))}
         </div>
       </div>

@@ -2,6 +2,8 @@ import  { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, MapPin, Building } from 'lucide-react';
 import Setting from '../utils/Settings';
+import { LazySection } from './ui/LazySection';
+import { LazyImage } from './ui/LazyImage';
 
 export const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -71,6 +73,14 @@ export const Experience = () => {
         <div className="space-y-12 max-w-4xl mx-auto">
           {Setting.getUserData().Experiences.map((experience, index) => (
             <div ref={refs[index]} key={`${experience.Company}-${index}`}>
+              <LazySection
+                key={`${experience.Title}-${index}`}
+                threshold={0.1}
+                delay={index * 100}
+                fallback={
+                  <div className="w-full h-full bg-gray-200/50 dark:bg-gray-700/50 animate-pulse rounded-xl" />
+                }
+              >
             {/* <ParallaxSection > */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -80,13 +90,22 @@ export const Experience = () => {
             >
               <div className="md:w-1/4 flex-shrink-0">
                 <div className="w-24 h-24 rounded-lg overflow-hidden mb-4 mx-auto md:mx-0">
-                  <img
+                  {/* <img
                     src={experience.Image}
                     alt={experience.Company}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0';
                     }}
+                  /> */}
+                  <LazyImage
+                        src={experience.Image}
+                        alt={experience.Company}
+                        className="w-full h-full object-cover"
+                        fallbackSrc={Setting.getUserData().Main.Backgrounds[0]}
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwdGVjaHxlbnwwfHx8fDE3NDg1MTMxNzB8MA&ixlib=rb-4.1.0';
+                        }}
                   />
                 </div>
                 
@@ -138,7 +157,7 @@ export const Experience = () => {
 
                 <button
 					onClick={() => setIsOpen(!isOpen)}
-					className="text-sm font-medium text-primary px-1 py-2 rounded-md text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors hover:ring-1 hover:ring-slate-700 dark:hover:ring-slate-300"
+					className="text-sm font-medium text-primary px-1 py-2 rounded-md text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors hover:ring-1 hover:ring-slate-700 dark:hover:ring-slate-300 animate-pulse "
 				>
 					{isOpen ? 'Hide Details ▲' : 'Show Details ▼'}
 				</button>
@@ -167,6 +186,7 @@ export const Experience = () => {
 				</motion.div>
               </div>
             </motion.div>
+            </LazySection>
             {/* </ParallaxSection> */}
             </div>
           ))}

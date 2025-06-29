@@ -3,6 +3,8 @@ import { motion, useInView } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
 import { ParallaxSection } from './effects/ParallaxSection';
 import Setting from '../utils/Settings';
+import { LazySection } from './ui/LazySection';
+import { LazyImage } from './ui/LazyImage';
 
 export const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -102,6 +104,14 @@ export const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Setting.getUserData().Projects.map((project, index) => (
             <div ref={refs[index]}>
+            <LazySection
+              key={`${project.Name}-${index}`}
+              threshold={0.1}
+              delay={index * 100}
+              fallback={
+                <div className="w-[350px] md:w-[350px] lg:w-[380px] h-96 bg-slate-200/50 dark:bg-slate-700/50 animate-pulse rounded-xl" />
+              }
+            >
             <ParallaxSection className='backdrop-blur-sm'>
             {/* <DynamicShadow> */}
             <motion.div
@@ -112,14 +122,21 @@ export const Projects = () => {
               className="w-[350px] md:w-[350px] lg:w-[380px] shrink-0 snap-start overflow-hidden transition-all duration-300 rounded-xl border-l-4 border-primary hover:border-l-0 cursor-default bg-slate-100/40 dark:bg-slate-700/40 backdrop-blur-sm shadow-lg hover:shadow-xl"
             >
               <div className="h-48 overflow-hidden">
-                <img 
+                <LazyImage
+                        src={project.Image}
+                        alt={project.Name}
+                        className="w-full h-full transition-transform duration-300 hover:scale-105"
+                        fallbackSrc={Setting.getUserData().Main.Backgrounds[0]}
+                        onError={() => console.log(`Failed to load image for ${project.Name}`)}
+                />
+                {/* <img 
                   src={project.Image} 
                   alt={project.Name} 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = Setting.getUserData().Main.Backgrounds[0];
                   }}
-                />
+                /> */}
               </div>
               
               <div className="p-6">
@@ -186,6 +203,7 @@ export const Projects = () => {
             </motion.div>
               {/* </DynamicShadow> */}
               </ParallaxSection>
+            </LazySection>
             </div>
           ))}
         </div>
