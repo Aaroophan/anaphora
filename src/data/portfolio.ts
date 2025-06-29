@@ -258,6 +258,25 @@ export const portfolioData: Record<string, Portfolio> = {
     ],
     "Projects": [
       {
+        "Image": "/images/OneWorkLoc-min.JPG",
+        "Name": "OneWorkLoc",
+        "Links": [
+          {
+            "Name": "Link",
+            "Icon": "link",
+            "Href": "https://OneWorkLoc.vercel.app"
+          },
+          {
+            "Name": "GitHub",
+            "Icon": "github",
+            "Href": "https://github.com/Aaroophan/OneWorkLoc"
+          }
+        ],
+        "Date": "June 2025",
+        "Description": "Built a modern web application for encoding and sharing text, code, JSON, and diagrams through compact, versioned URLs. Enabled real-time content compression, syntax-highlighted code sharing, and diagram visualization—all accessible via shareable links without requiring user accounts or backend infrastructure. Focused on developer experience, responsive UI, and multi-format content support.",
+        "Technologies": "Next.js 14, React, TypeScript, Tailwind CSS, Shadcn UI, Lucide, custom URL encoding, localStorage"
+      },
+      {
         "Image": "/images/SkrinePlae-min.JPG",
         "Name": "SkrinePlae",
         "Links": [
