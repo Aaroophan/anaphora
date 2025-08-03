@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense, useState } from 'react';
 import { BrowserRouter, Routes, Route, Outlet, useParams, Navigate } from 'react-router-dom';
 import { useThemeStore } from './store/themeStore';
 import { Home } from './pages/Home';
@@ -33,7 +33,58 @@ const PageLoader = () => (
 	</div>
 );
 
+function Test() {
+	const [Server, setServer] = useState<string>('http://127.0.0.1:8000');
+
+	const [data, setData] = useState<Object | null>(null);
+	const [loading, setLoading] = useState<boolean>(true);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(Server + '/HarkBase_1751919314/READ/v2/AnaphoraTable1', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						"Filter": {
+							"AnaphoraTestCol3": "AnaphoraTestVal3NEW"
+						}
+					}),
+				});
+
+				if (!response.ok) {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+				const result = await response.json();
+				setData(result);
+			} catch (err: unknown) {
+				if (err instanceof Error) {
+					setError(err.message);
+				} else {
+					setError(String(err));
+				}
+			} finally {
+				setLoading(false);
+			}
+	}
+
+		fetchData();
+	}, []);
+
+	if (loading) return <pre>Loading...</pre>;
+	if (error) return <pre>Error: {error}</pre>;
+
+	return <pre>{JSON.stringify(data, null, 2)}</pre>
+}
+
+
 function Router() {
+
+	// return Test()
+	
   const { darkMode } = useThemeStore();
   const Location = useLocation();
 

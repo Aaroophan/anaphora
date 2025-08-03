@@ -11,10 +11,11 @@ export const portfolioData: Record<string, Portfolio> = {
         "Animation Enthusiast",
         "Full Stack Developer",
         "Associate Software Engineer",
-        "Agile Team Player",
-        "React, Node, C#, .NET",
+        "Next.js, React, JavaScript/TypeScript",
+        "Node, Python (FastAPI), C# (.NET)",
         "SQL, PostgreSQL, MongoDB",
-        "MERN Stack Enthusiast"
+        "MERN Stack Enthusiast",
+        "Agile Team Player"
       ],
       "Links": [
         {
@@ -45,7 +46,7 @@ export const portfolioData: Record<string, Portfolio> = {
         {
           "Name": "Resume",
           "Icon": "FileText",
-          "Href": "https://drive.google.com/file/d/12MG7Wg_VBgnbUzlsVtpnBxIRaLVlzMim/view?usp=sharing"
+          "Href": "https://drive.google.com/file/d/1IrfrvZt9QxS5BnMa-oXBlamk3h1t4uqH/view?usp=sharing"
         }
       ],
       "Backgrounds": [
@@ -74,16 +75,12 @@ export const portfolioData: Record<string, Portfolio> = {
       ]
     },
     "About": {
-      "Description": "Hello,\n\nI’m Aaroophan Varatharajan, currently working as an Associate Software Engineer at M Data Zone in Colombo, Sri Lanka. I was promoted to this role after serving as a Junior Software Engineer since September 2024. I hold a Second-Class Upper degree in Computer Science and Software Engineering from SLIIT City Uni, affiliated with the University of Bedfordshire, UK, and have also earned a Higher Diploma in IT. I was proud to be recognized on the Dean's List for academic excellence.\n\nAt M Data Zone and during my internship at Alliance Finance Company, I’ve gained practical experience in full-stack software development. I specialize in .NET (C#), React.js, Node.js, and database technologies like MySQL, PostgreSQL, T-SQL, and MongoDB. My skill set also includes JavaScript, TypeScript, Blazor, Python, Java, PHP, Flask, HTML/CSS, Selenium, Machine Learning, and the OpenAI API. I’m also a fluent English speaker with an IELTS score of 7.0.\n\nI’m passionate about building scalable software solutions and continuously improving my technical and problem-solving abilities.\n\nLet’s connect to explore how I can contribute to your team.\n\nBest Regards,\nAaroophan"
+      "Description": "Hi, I’m Aaroophan Varatharajan, a Full Stack Developer based in Colombo, Sri Lanka.\n\nCurrently, I work as an Associate Software Engineer at M Data Zone, where I was promoted after contributing as a Junior Software Engineer since September 2024.\n\nI hold a Second- Class Upper BSc(Hons) in Computer Science and Software Engineering from SLIIT City Campus(University of Bedfordshire, UK), and a Higher Diploma in IT, where I was recognized on the Dean’s List for academic excellence.\n\nOver the past two years, I’ve built 10+ scalable applications in fintech and marketing, gaining hands- on experience with modern web stacks including Next.js, React, TypeScript, Node.js, .NET(C#), and Python(FastAPI).I’m also skilled in PostgreSQL, T- SQL, MongoDB, MySQL, and have worked with tools like Selenium, OpenAI API, and Blazor, alongside solid foundations in Java, PHP, and Flask.\n\nFluent in English with a 7.0 IELTS score, I’m passionate about building reliable, scalable software and continuously expanding my technical depth.\n\nLet’s connect.I’m excited to explore how I can contribute to your team.\n\nBest regards,\nAaroophan Varatharajan"
     },
     "Technologies": [
       [
         "Programming Languages",
         [
-          [
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg",
-            "SQL"
-          ],
           [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
             "JS"
@@ -99,6 +96,10 @@ export const portfolioData: Record<string, Portfolio> = {
           [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
             "Python"
+          ],
+          [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg",
+            "SQL"
           ],
           [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
@@ -122,40 +123,52 @@ export const portfolioData: Record<string, Portfolio> = {
         "Frameworks & Libraries",
         [
           [
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            "Express"
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+            "Next.js"
           ],
           [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
             "React"
           ],
           [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+            "FastAPI"
+          ],
+          [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
             "Node"
           ],
           [
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
-            "Three"
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+            "Express"
           ],
           [
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
-            "Bootstrap"
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+            ".NET"
           ],
           [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
             "Flask"
           ],
           [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+            "TailwindCSS"
+          ],
+          [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
+            "Bootstrap"
+          ],
+          [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg",
             "Selenium"
           ],
           [
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
-            "Blazor"
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
+            "Three"
           ],
           [
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
-            ".NET"
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+            "Blazor"
           ]
         ]
       ],
@@ -204,6 +217,18 @@ export const portfolioData: Record<string, Portfolio> = {
             "Android Studio"
           ],
           [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+            "Vercel"
+          ],
+          [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/render/render-original.svg",
+            "Render"
+          ],
+          [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
+            "Netlify"
+          ],
+          [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
             "GIT"
           ],
@@ -218,12 +243,24 @@ export const portfolioData: Record<string, Portfolio> = {
           [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg",
             "Trello"
+          ],
+          [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/zendesk/zendesk-original.svg",
+            "Zendesk"
           ]
         ]
       ],
       [
         "Machine Learning",
         [
+          [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg",
+            "OpenAI"
+          ],
+          [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/HuggingFace/HuggingFace-original.svg",
+            "HuggingFace"
+          ],
           [
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
             "PyTorch"
@@ -257,6 +294,25 @@ export const portfolioData: Record<string, Portfolio> = {
       ]
     ],
     "Projects": [
+      {
+        "Image": "/images/Harkbase-min.JPG",
+        "Name": "Harkbase",
+        "Links": [
+          {
+            "Name": "Link",
+            "Icon": "link",
+            "Href": "https://harkbase.onrender.com"
+          },
+          {
+            "Name": "GitHub",
+            "Icon": "github",
+            "Href": "https://github.com/Aaroophan/HarkBase"
+          }
+        ],
+        "Date": "July 2025",
+        "Description": "DBaaS platform that provisions isolated SQLite databases with REST APIs for rapid prototyping.Supports dynamic schema, optional JWT authentication, Google Drive persistence, audit logs, input validation, and quota monitoring.",
+        "Technologies": "FastAPI, Python, SQLite, Pydantic, Google Drive API "
+      },
       {
         "Image": "/images/OneWorkLoc-min.JPG",
         "Name": "OneWorkLoc",
@@ -551,17 +607,11 @@ export const portfolioData: Record<string, Portfolio> = {
         "LocationType": "On-site",
         "Date": "Mar 2025 - Present",
         "Description": [
-          "Built a multi-channel marketing platform using Next.js and .NET Core in a 2-person team.",
-          "Delivered 5+ backend enhancements and functional features in .NET.",
-          "Developed a .NET app to execute test automation, cutting manual effort by 70%.",
-          "Built and ran 600+ Selenium test scripts to automate regression testing within a month.",
-          "Performed manual testing across 6+ projects, reducing bugs by 30%.",
-          "Wrote 100+ efficient SQL queries, 20+ stored procedures, triggers, views & functions.",
-          "Troubleshot & resolved database-related issues promptly, reducing downtime by 20%.",
-          "Documented software and database designs for 3+ projects.",
-          "Managed 20+ weekly Zendesk tickets, improving response time and support by 35%.",
-          "Trained 2 new employees, reducing their onboarding time by 40% within a month.",
-          "Worked as integral part of Race Data based in Canada, US and Sri Lanka.",
+          "Building a multi-channel marketing platform using Next.js & ASP.NET Core.",
+          "Delivered 5+ backend enhancements & functional features in Blazor & .NET. ",
+          "Wrote 100+ efficient SQL queries, 20+ stored procedures, triggers & functions.",
+          "Trained 2 new employees, reducing onboarding time by 40% within a month. ",
+          "Worked as integral part of Racedata based in Canada, US and Sri Lanka.",
         ]
       },
       {
@@ -573,17 +623,12 @@ export const portfolioData: Record<string, Portfolio> = {
         "LocationType": "On-site",
         "Date": "Sept 2024 - Mar 2025",
         "Description": [
-          "Built a multi-channel marketing platform using Next.js and .NET Core in a 2-person team.",
-          "Delivered 5+ backend enhancements and functional features in .NET.",
-          "Developed a .NET app to execute test automation, cutting manual effort by 70%.",
-          "Built and ran 600+ Selenium test scripts to automate regression testing within a month.",
-          "Performed manual testing across 6+ projects, reducing bugs by 30%.",
-          "Wrote 100+ efficient SQL queries, 20+ stored procedures, triggers, views & functions.",
-          "Troubleshot & resolved database-related issues promptly, reducing downtime by 20%.",
-          "Documented software and database designs for 3+ projects.",
-          "Managed 20+ weekly Zendesk tickets, improving response time and support by 35%.",
-          "Trained 2 new employees, reducing their onboarding time by 40% within a month.",
-          "Worked as integral part of Race Data based in Canada, US and Sri Lanka.",
+          "Developed .NET app to execute test automation, cutting manual effort by 70%.",
+          "Built 1000+ Selenium test scripts to automate testing within a month. ",
+          "Performed manual testing across 6+ projects, reducing bugs by 30%. ",
+          "Troubleshot & resolved database-related issues, reducing downtime by 20%. ",
+          "Documented software & database designs for 3+ projects.",
+          "Managed 20+ weekly Zendesk tickets, improving response & support by 35%.",
         ]
       },
       {
@@ -613,7 +658,7 @@ export const portfolioData: Record<string, Portfolio> = {
         "Title": "B.Sc. Computer Science & Software Engineering",
         "Date": "Sep 2023 - May 2024",
         "Description": [
-          "Second Class Upper"
+          "Second Class, Upper Division"
         ]
       },
       {
@@ -622,7 +667,7 @@ export const portfolioData: Record<string, Portfolio> = {
         "Title": "Higher Diploma in Information Technology",
         "Date": "May 2021 - Jun 2023",
         "Description": [
-          "Dean's List Award"
+          "Dean's List Award (GPA - 3.8 / 4.0) "
         ]
       },
       {
