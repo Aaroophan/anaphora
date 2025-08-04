@@ -39,7 +39,7 @@ function Test() {
 	const [data, setData] = useState<Object | null>(null);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<string | null>(null);
-
+ 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
